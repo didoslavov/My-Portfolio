@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Concert_One } from 'next/font/google';
 import './globals.css';
-import Header from './Header/Header';
+import Header from './Components/Header/Header';
 
 const concertOne = Concert_One({ weight: '400', subsets: ['latin'] });
 
