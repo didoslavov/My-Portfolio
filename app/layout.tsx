@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Concert_One } from 'next/font/google';
 import './globals.css';
+import Header from './Header/Header';
 
-const inter = Inter({ subsets: ['latin'] });
+const concertOne = Concert_One({ weight: '400', subsets: ['latin'] });
 
 export const metadata: Metadata = {
     title: 'Dido | Portfolio',
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${inter.className}`}>{children}</body>
+            <body className={`${concertOne.className} dark:bg-rich-black bg-timberwolf`}>
+                <Header />
+                <main className="w-[80%] m-auto">{children}</main>
+            </body>
         </html>
     );
 }
