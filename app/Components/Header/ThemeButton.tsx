@@ -15,7 +15,11 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({ toggleTheme, isMobileMenuOpen
             {isDarkMode ? (
                 <BsSunFill size={30} className="text-sheen-gold" />
             ) : (
-                <BsFillMoonFill size={30} className="text-oxford-blue" />
+                <BsFillMoonFill
+                    size={30}
+                    className="text-raisin-black
+                "
+                />
             )}
         </button>
     );

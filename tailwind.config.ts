@@ -6,12 +6,12 @@ const config: Config = {
     theme: {
         extend: {},
         colors: {
-            timberwolf: '#CDCDC3',
             'sheen-gold': '#CAA45D',
-            'harvest-gold': '#CC922F',
-            'prussian-blue': '#1E3957',
-            'oxford-blue': '#0A2749',
-            'rich-black': '#0F1F2F',
+            'raisin-black': '#291F28',
+            'taupe-gray': '#958D98',
+            wenge: '#605862',
+            wine: '#7F3343',
+            silver: '#BBB4B3',
         },
     },
     plugins: [],
