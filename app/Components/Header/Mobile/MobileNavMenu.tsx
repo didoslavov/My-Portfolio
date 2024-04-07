@@ -7,12 +7,15 @@ gsap.registerPlugin(useGSAP);
 let listItemTween: gsap.core.Tween;
 
 const MobileNavMenu = ({ isMobileMenuOpen, toggleMobile }: { isMobileMenuOpen: boolean; toggleMobile: () => void }) => {
-    useGSAP(() => {
-        gsap.from('.menu', { opacity: 0 });
-        gsap.to('.menu', { opacity: 1, height: '100vh', ease: 'expo.inOut' });
+    useGSAP(
+        () => {
+            gsap.from('.menu', { opacity: 0 });
+            gsap.to('.menu', { opacity: 1, height: '100vh', ease: 'power1.in' });
 
-        listItemTween = gsap.from('.li', { opacity: 0, y: -200, stagger: 0.2, ease: 'expo.inOut' });
-    });
+            listItemTween = gsap.from('.li', { opacity: 0, y: -200, stagger: 0.2, ease: 'power1.out' });
+        },
+        { dependencies: [isMobileMenuOpen] }
+    );
 
     const toggleMobileMenu = () => {
         listItemTween.reverse().then(() => {
