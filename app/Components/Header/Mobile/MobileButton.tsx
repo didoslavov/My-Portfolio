@@ -8,7 +8,7 @@ interface MobileButtonProps {
 
 const MobileButton: React.FC<MobileButtonProps> = ({ toggleMobileMenu, isMobileMenuOpen }) => {
     return (
-        <button onClick={toggleMobileMenu} className="lg:hidden btn md:hidden z-50 py-2">
+        <button onClick={toggleMobileMenu} className="lg:hidden btn md:hidden z-50 py-2 ">
             {isMobileMenuOpen ? (
                 <AiOutlineClose size={30} className="text-raisin-black dark:text-silver" />
             ) : (

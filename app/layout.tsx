@@ -19,7 +19,7 @@ export default function RootLayout({
         <html lang="en">
             <body className={`${concertOne.className} dark:bg-raisin-black bg-silver`}>
                 <Header />
-                <main className="w-[60%] m-auto">{children}</main>
+                <main className="m-auto">{children}</main>
             </body>
         </html>
     );
