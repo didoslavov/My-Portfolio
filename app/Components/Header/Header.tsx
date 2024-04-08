@@ -21,7 +21,7 @@ const Header = () => {
     };
 
     return (
-        <header className="py-4 px-2 flex justify-between items-center relative w-[60%] m-auto mb-8">
+        <header className="py-6 px-10 flex justify-between items-center relative m-auto mb-8">
             <ThemeButton isMobileMenuOpen={isMobileMenuOpen} isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
             {!isMobileMenuOpen && <MobileImage isMobileMenuOpen={isMobileMenuOpen} />}
             {!isMobileMenuOpen && <MobileButton toggleMobileMenu={toggleMobile} isMobileMenuOpen={isMobileMenuOpen} />}
