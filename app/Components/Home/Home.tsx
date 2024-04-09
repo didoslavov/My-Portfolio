@@ -43,7 +43,7 @@ const Home = () => {
         vSlide.play();
     });
     return (
-        <div className="relative flex flex-col md:flex-row items-center justify-between md:justify-around py-8 px-6">
+        <div className="relative flex flex-col md:flex-row items-center justify-between md:justify-around py-8 px-6 ">
             <div className="flex flex-col gap-12 md:gap-44 items-start text-raisin-black  dark:text-silver drop-shadow-2xl">
                 <p className="text-3xl md:text-6xl lg:text-8xl">Hey, I&apos;m Dido.</p>
                 <div className="flex items-center gap-6 overflow-hidden text-3xl">
@@ -64,28 +64,28 @@ const Home = () => {
                 height={800}
                 src="/portfolio-img-bg-dark.jpg"
                 alt="Picture of me, Dido"
-                className="rounded-xl w-[500px] h-[600px] hidden md:block md:dark:hidden"
+                className="rounded-xl md:w-[300px] md:h-[400px] lg:w-[500px] lg:h-[600px] hidden md:block md:dark:hidden"
             />
             <Image
                 width={800}
                 height={800}
                 src="/portfolio-img-bg-light.jpg"
                 alt="Picture of me, Dido"
-                className="rounded-xl w-[500px] h-[600px] hidden md:dark:block"
+                className="rounded-xl md:w-[300px] md:h-[400px] lg:w-[500px] lg:h-[600px] hidden md:dark:block"
             />
-            <ul className="absolute right-4 top-[50%] -translate-y-[50%] flex flex-col gap-6 text-raisin-black dark:text-silver">
+            <ul className="absolute hidden md:flex md:justify-center md:-bottom-10 md:right-[50%] md:translate-x-[50%] lg:right-8 lg:top-[50%] lg:-translate-y-[50%] lg:flex-col gap-6 text-raisin-black dark:text-silver">
                 <li>
-                    <a href="#">
+                    <a href="#" className="text-wine dark:text-sheen-gold">
                         <AiFillGithub size={30} />
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" className="text-wine dark:text-sheen-gold">
                         <AiFillLinkedin size={30} />
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#" className="text-wine dark:text-sheen-gold">
                         <IoIosPaper size={30} />
                     </a>
                 </li>
