@@ -6,7 +6,7 @@ import FallingStar from './FallingStars';
 
 const ShootingStars = () => {
     const [stars, setStars] = useState<JSX.Element[]>([]);
-    const staticCount = 100;
+    const staticCount = 10;
     const fallingCount = 10;
 
     useEffect(() => {

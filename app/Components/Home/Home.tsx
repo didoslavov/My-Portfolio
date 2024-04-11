@@ -125,14 +125,14 @@ const Home = () => {
                 <Image
                     width={800}
                     height={800}
-                    src="/portfolio-img-bg-dark.jpg"
+                    src="/public/portfolio-img-bg-dark.webp"
                     alt="Picture of me, Dido"
                     className="z-50 relative rounded-xl md:w-[360px] md:h-[470px] hidden md:block md:dark:hidden"
                 />
                 <Image
                     width={800}
                     height={800}
-                    src="/portfolio-img-bg-light.jpg"
+                    src="/public/portfolio-img-bg-light.jpg"
                     alt="Picture of me, Dido"
                     className="z-50 relative rounded-xl md:w-[360px] md:h-[470px] hidden md:hidden md:dark:block"
                 />
