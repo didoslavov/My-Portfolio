@@ -8,6 +8,9 @@ import gsap, { Elastic } from 'gsap';
 import Image from 'next/image';
 import React, { useRef } from 'react';
 
+import darkModeImage from '/public/portfolio-img-bg-dark.webp';
+import lightModeImage from '/public/portfolio-img-bg-light.jpg';
+
 const Home = () => {
     const stack = ['Java Script', 'React', 'Next', 'Node JS', 'Express'];
     const containerRef = useRef<HTMLDivElement>(null);
@@ -125,14 +128,14 @@ const Home = () => {
                 <Image
                     width={800}
                     height={800}
-                    src="/public/portfolio-img-bg-dark.webp"
+                    src={darkModeImage}
                     alt="Picture of me, Dido"
                     className="z-50 relative rounded-xl md:w-[360px] md:h-[470px] hidden md:block md:dark:hidden"
                 />
                 <Image
                     width={800}
                     height={800}
-                    src="/public/portfolio-img-bg-light.jpg"
+                    src={lightModeImage}
                     alt="Picture of me, Dido"
                     className="z-50 relative rounded-xl md:w-[360px] md:h-[470px] hidden md:hidden md:dark:block"
                 />
