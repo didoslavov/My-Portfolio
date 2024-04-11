@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Concert_One } from 'next/font/google';
 import './globals.css';
 import Header from './Components/Header/Header';
-import ShootingStars from './Components/ShootingStars';
+import ShootingStars from './Components/ShootingStars/ShootingStars';
 
 const concertOne = Concert_One({ weight: '400', subsets: ['latin'] });
 
