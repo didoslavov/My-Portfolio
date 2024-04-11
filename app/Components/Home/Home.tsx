@@ -8,7 +8,7 @@ import gsap, { Elastic } from 'gsap';
 import Image from 'next/image';
 import React, { useRef } from 'react';
 
-import darkModeImage from '/public/portfolio-img-bg-dark.webp';
+import darkModeImage from '/public/portfolio-img-bg-dark.jpg';
 import lightModeImage from '/public/portfolio-img-bg-light.jpg';
 
 const Home = () => {
