@@ -8,14 +8,18 @@ import { AiFillStar } from 'react-icons/ai';
 const StaticStar = () => {
     const staticStarsRef = useRef<HTMLDivElement>(null);
 
-    const leftPosition = `${Math.random() * 100}vw`;
-    const topPosition = `${Math.random() * 100}vh`;
+    const leftPosition = `${Math.random() * 98}vw`;
+    const topPosition = `${Math.random() * 98}vh`;
 
     useGSAP(() => {
         const starRef = staticStarsRef.current;
         const tl = gsap.timeline({ repeat: -1, delay: Math.random() * 2 });
 
-        tl.to(starRef, { duration: 2, alpha: 0.2, ease: 'elastic' }).to(starRef, { duration: 10, alpha: 1, ease: 'elastic' });
+        tl.to(starRef, { duration: 2, scale: 0, ease: 'sine' }).to(starRef, {
+            duration: 2,
+            scale: 1,
+            ease: 'sine',
+        });
     }, []);
 
     return (
