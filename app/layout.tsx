@@ -19,7 +19,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${concertOne.className} dark:bg-raisin-black bg-silver-100`}>
-                <ShootingStars />
+                {/* <ShootingStars /> */}
                 <Header />
                 <main className="m-auto">{children}</main>
             </body>
