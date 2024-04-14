@@ -1,5 +1,10 @@
 import Home from './Components/Home/Home';
+import { ThemeProvider } from './context/ThemeContext';
 
 export default function Main() {
-    return <Home />;
+    return (
+        <ThemeProvider>
+            <Home />
+        </ThemeProvider>
+    );
 }
