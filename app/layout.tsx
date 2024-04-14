@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Concert_One } from 'next/font/google';
 import './globals.css';
 import Header from './Components/Header/Header';
-import ShootingStars from './Components/ShootingStars/ShootingStars';
+import Canvas from './Components/ShootingStars/Canvas';
 
 const concertOne = Concert_One({ weight: '400', subsets: ['latin'] });
 
@@ -19,9 +19,9 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${concertOne.className} dark:bg-raisin-black bg-silver-100`}>
-                {/* <ShootingStars /> */}
                 <Header />
-                <main className="m-auto">{children}</main>
+                <Canvas />
+                <main>{children}</main>
             </body>
         </html>
     );
