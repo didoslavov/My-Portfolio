@@ -1,21 +1,35 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 import { BsFillMoonFill, BsSunFill } from 'react-icons/bs';
 
 interface ThemeButtonProps {
     toggleTheme: () => void;
     isMobileMenuOpen: boolean;
-    isDarkMode: boolean;
 }
 
-const ThemeButton: React.FC<ThemeButtonProps> = ({ toggleTheme, isMobileMenuOpen, isDarkMode }) => {
+const ThemeButton: React.FC<ThemeButtonProps> = ({ toggleTheme, isMobileMenuOpen }) => {
+    const [mounted, setMounted] = useState(false);
+    const { resolvedTheme } = useTheme();
+
     useGSAP(
         () => {
-            gsap.from('.theme-btn', { duration: 0.5, opacity: 0 });
-            gsap.to('.theme-btn', { duration: 0.5, opacity: 1, ease: 'power1.in' });
+            if (mounted) {
+                gsap.from('.theme-btn', { duration: 0.5, opacity: 0 });
+                gsap.to('.theme-btn', { duration: 0.5, opacity: 1, ease: 'power1.in' });
+            }
         },
-        { dependencies: [isMobileMenuOpen] }
+        { dependencies: [isMobileMenuOpen, mounted] }
     );
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) {
+        return null;
+    }
 
     return (
         <button
@@ -23,7 +37,7 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({ toggleTheme, isMobileMenuOpen
             className={`z-50 ${
                 isMobileMenuOpen ? 'block' : 'hidden'
             } lg:block md:block transition-opacity duration-700 theme-btn`}>
-            {isDarkMode ? (
+            {resolvedTheme === 'dark' ? (
                 <BsSunFill size={30} className="text-sheen-gold sun" />
             ) : (
                 <BsFillMoonFill size={30} className="text-wine moon" />
