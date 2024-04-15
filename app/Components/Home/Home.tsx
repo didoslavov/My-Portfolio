@@ -116,19 +116,19 @@ const Home = () => {
                     height={800}
                     src={darkModeImage}
                     alt="Picture of me, Dido"
-                    className="z-50 relative rounded-xl md:w-[360px] md:h-[470px] hidden md:block md:dark:hidden"
+                    className="space-x-3 z-50 relative rounded-xl md:w-[360px] md:h-[470px] hidden md:block md:dark:hidden"
                 />
                 <Image
                     width={800}
                     height={800}
                     src={lightModeImage}
                     alt="Picture of me, Dido"
-                    className="z-50 relative rounded-xl md:w-[360px] md:h-[470px] hidden md:hidden md:dark:block"
+                    className="space-x-3 z-50 relative rounded-xl md:w-[360px] md:h-[470px] hidden md:hidden md:dark:block"
                 />
                 <div className="expanding-div z-10 rounded-xl md:w-[360px] md:h-[470px] hidden md:block opacity-50 absolute -top-6 -right-6 bg-wine-700 dark:bg-sheen-gold-100">
                     <ul
                         ref={socialsRef}
-                        className="flex flex-col absolute top-4 left-4 md:justify-center gap-6 text-raisin-black dark:text-silver">
+                        className="opacity-0 flex flex-col absolute top-4 left-4 md:justify-center gap-6 text-raisin-black dark:text-silver">
                         <li>
                             <a href="#" className="text-silver dark:text-raisin-black">
                                 <AiFillGithub size={30} />
