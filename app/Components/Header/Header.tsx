@@ -22,7 +22,7 @@ const Header = () => {
 
     return (
         <header className="py-6 px-10 flex justify-between items-center m-auto mb-8 relative z-50">
-            <ThemeButton isMobileMenuOpen={isMobileMenuOpen} isDarkMode={resolvedTheme === 'dark'} toggleTheme={toggleTheme} />
+            <ThemeButton isMobileMenuOpen={isMobileMenuOpen} toggleTheme={toggleTheme} />
             {!isMobileMenuOpen && <MobileImage isMobileMenuOpen={isMobileMenuOpen} />}
             {!isMobileMenuOpen && <MobileButton toggleMobileMenu={toggleMobile} isMobileMenuOpen={isMobileMenuOpen} />}
             <Nav />
