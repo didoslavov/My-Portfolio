@@ -5,26 +5,29 @@ import { Sprite } from '@pixi/react';
 import gsap from 'gsap';
 import { useRef } from 'react';
 
-const StaticStar = ({ resolvedTheme }: { resolvedTheme: string | undefined }) => {
+const StaticStar = ({ resolvedTheme, starType }: { resolvedTheme: string | undefined; starType: string }) => {
     const staticStarsRef = useRef(null);
     const star = 'star.png';
 
     const leftPosition = Math.random() * screen.width;
     const topPosition = Math.random() * screen.height;
-    const starSize = Math.ceil(Math.random() * 8);
+    const starSize = starType === 'small' ? Math.ceil(Math.random() * 5) : 10;
 
     useGSAP(() => {
-        const duration = Math.random() * 1.5 + 5;
+        const duration = Math.random() * 1.5 + 1;
+        const delay = Math.random() * 2 + 2;
         const starRef = staticStarsRef.current;
 
         gsap.fromTo(
             starRef,
-            { alpha: 0.1 },
+            { alpha: 1 },
             {
                 repeat: -1,
                 duration,
-                alpha: 1,
-                ease: 'expo',
+                delay,
+                alpha: 0.1,
+                ease: 'circ.inOut',
+                yoyo: true,
             }
         );
     }, []);
