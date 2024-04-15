@@ -3,12 +3,9 @@
 import { useGSAP } from '@gsap/react';
 import { Sprite } from '@pixi/react';
 import gsap from 'gsap';
-import { useTheme } from 'next-themes';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 
-const FallingStar = () => {
-    const { resolvedTheme } = useTheme();
-
+const FallingStar = ({ resolvedTheme }: { resolvedTheme: string | undefined }) => {
     const fallingStarRef = useRef(null);
     const star = 'shootingstar.png';
 
@@ -16,12 +13,12 @@ const FallingStar = () => {
     const starSize = Math.ceil(Math.random() * 10);
 
     useGSAP(() => {
-        const duration = Math.random() * 1.5 + 5;
+        const duration = Math.random() * 1.5 + 7;
         const starRef = fallingStarRef.current;
 
         gsap.to(starRef, {
             alpha: 0,
-            x: -1000,
+            x: -3000,
             y: 3000,
             duration,
             ease: 'sine',
@@ -31,12 +28,12 @@ const FallingStar = () => {
 
     return (
         <Sprite
-            tint={resolvedTheme === 'dark' ? '#7F3343' : '#CAA45D'}
+            tint={resolvedTheme === 'dark' ? '#CAA45D' : '#7F3343'}
             ref={fallingStarRef}
             angle={45}
             image={star}
             x={leftPosition}
-            y={0}
+            y={10}
             width={starSize}
             height={100}
         />

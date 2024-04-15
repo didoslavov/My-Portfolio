@@ -5,7 +5,7 @@ import { Sprite } from '@pixi/react';
 import gsap from 'gsap';
 import { useRef } from 'react';
 
-const StaticStar = () => {
+const StaticStar = ({ resolvedTheme }: { resolvedTheme: string | undefined }) => {
     const staticStarsRef = useRef(null);
     const star = 'star.png';
 
@@ -32,7 +32,7 @@ const StaticStar = () => {
     return (
         <Sprite
             ref={staticStarsRef}
-            tint={'#BBB4B3'}
+            tint={resolvedTheme === 'dark' ? '#BBB4B3' : '#291F28'}
             image={star}
             x={leftPosition}
             y={topPosition}
