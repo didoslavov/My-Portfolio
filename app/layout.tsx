@@ -18,7 +18,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" suppressHydrationWarning>
             <body className={`${concertOne.className} dark:bg-raisin-black bg-silver-100`}>
                 <Providers>
                     <Header />
