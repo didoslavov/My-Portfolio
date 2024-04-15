@@ -23,7 +23,7 @@ const Canvas = () => {
     const [fallingStars, setFallingStars] = useState<JSX.Element[]>([]);
 
     const staticCount = 300;
-    const fallingCount = 10;
+    const fallingCount = 20;
 
     useEffect(() => {
         const updateCanvasDimensions = () => {
