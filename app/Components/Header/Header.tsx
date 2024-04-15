@@ -6,14 +6,14 @@ import ThemeButton from './ThemeButton';
 import MobileImage from './Mobile/MobileImage';
 import Nav from './Nav';
 import MobileNavMenu from './Mobile/MobileNavMenu';
+import { useTheme } from 'next-themes';
 
 const Header = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const { resolvedTheme, setTheme } = useTheme();
 
     const toggleTheme = () => {
-        document.documentElement.classList.toggle('dark');
-        setIsDarkMode(!isDarkMode);
+        setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
     };
 
     const toggleMobile = () => {
@@ -21,8 +21,8 @@ const Header = () => {
     };
 
     return (
-        <header className="py-6 px-10 flex justify-between items-center m-auto mb-8">
-            <ThemeButton isMobileMenuOpen={isMobileMenuOpen} isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+        <header className="py-6 px-10 flex justify-between items-center m-auto mb-8 relative z-50">
+            <ThemeButton isMobileMenuOpen={isMobileMenuOpen} isDarkMode={resolvedTheme === 'dark'} toggleTheme={toggleTheme} />
             {!isMobileMenuOpen && <MobileImage isMobileMenuOpen={isMobileMenuOpen} />}
             {!isMobileMenuOpen && <MobileButton toggleMobileMenu={toggleMobile} isMobileMenuOpen={isMobileMenuOpen} />}
             <Nav />
