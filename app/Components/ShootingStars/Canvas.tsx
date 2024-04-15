@@ -7,18 +7,20 @@ import { PixiPlugin } from 'gsap/PixiPlugin';
 import { Stage } from '@pixi/react';
 import StaticStar from './StaticStar';
 import FallingStar from './FallingStar';
+import { useTheme } from 'next-themes';
 
 gsap.registerPlugin(PixiPlugin);
 PixiPlugin.registerPIXI(PIXI);
 
 const Canvas = () => {
+    const { resolvedTheme } = useTheme();
     const containerRef = useRef<HTMLDivElement>(null);
     const [canvasDimensions, setCanvasDimensions] = useState({
         width: 800,
         height: 600,
     });
-    const [stars, setStars] = useState<JSX.Element[]>([]);
-    const [stars1, setStars1] = useState<JSX.Element[]>([]);
+    const [staticStars, setStaticStars] = useState<JSX.Element[]>([]);
+    const [fallingStars, setFallingStars] = useState<JSX.Element[]>([]);
 
     const staticCount = 300;
     const fallingCount = 10;
@@ -46,22 +48,22 @@ const Canvas = () => {
         const fallingStars: JSX.Element[] = [];
 
         for (let i = 0; i < staticCount; i++) {
-            staticStars.push(<StaticStar key={`static-${i}`} />);
+            staticStars.push(<StaticStar resolvedTheme={resolvedTheme} key={`static-${i}`} />);
         }
 
         for (let i = 0; i < fallingCount; i++) {
-            fallingStars.push(<FallingStar key={`falling-${i}`} />);
+            fallingStars.push(<FallingStar resolvedTheme={resolvedTheme} key={`falling-${i}`} />);
         }
 
-        setStars(() => [...staticStars]);
-        setStars1(() => [...fallingStars]);
-    }, []);
+        setStaticStars(() => [...staticStars]);
+        setFallingStars(() => [...fallingStars]);
+    }, [resolvedTheme]);
 
     return (
         <div className="w-screen h-screen absolute top-0 right-0" ref={containerRef}>
             <Stage width={canvasDimensions.width} height={canvasDimensions.height} options={{ backgroundAlpha: 0 }}>
-                {stars}
-                {stars1}
+                {staticStars}
+                {fallingStars}
             </Stage>
         </div>
     );
