@@ -10,18 +10,18 @@ const FallingStar = ({ resolvedTheme }: { resolvedTheme: string | undefined }) =
     const star = 'shootingstar.png';
 
     const leftPosition = Math.random() * screen.width;
-    const starSize = Math.ceil(Math.random() * 10);
+    const starSize = Math.ceil(Math.random() * 1.5 + 5);
 
     useGSAP(() => {
-        const duration = Math.random() * 1.5 + 7;
+        const duration = Math.random() * 1.5 + 5;
         const starRef = fallingStarRef.current;
 
         gsap.to(starRef, {
-            alpha: 0,
             x: -3000,
             y: 3000,
+            alpha: 0,
             duration,
-            ease: 'sine',
+            ease: 'sine.out',
             repeat: -1,
         });
     }, []);
