@@ -68,7 +68,7 @@ const Canvas = () => {
     };
 
     return (
-        <div className="w-screen h-screen absolute top-0 right-0" ref={containerRef}>
+        <div className="w-screen h-screen fixed top-0 right-0" ref={containerRef}>
             <Stage width={canvasDimensions.width} height={canvasDimensions.height} options={{ backgroundAlpha: 0 }}>
                 {staticStarsSmall}
                 {staticStarsBig}
