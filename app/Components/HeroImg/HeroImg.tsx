@@ -25,7 +25,7 @@ const HeroImg = () => {
             });
         }
 
-        gsap.to(socialsRef.current, { opacity: 1, duration: 1 });
+        gsap.to(socialsRef.current, { alpha: 1, duration: 0.5 });
     };
 
     const handleHoverExit = () => {
@@ -43,6 +43,8 @@ const HeroImg = () => {
                 });
             });
         }
+
+        gsap.to(socialsRef.current, { alpha: 0, duration: 0.5 });
     };
 
     return (
