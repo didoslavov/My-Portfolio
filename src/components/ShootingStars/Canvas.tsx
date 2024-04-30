@@ -1,6 +1,6 @@
 'use client';
 
-import { useLayoutEffect, useRef, useState, useMemo, useEffect } from 'react';
+import { useRef, useState, useMemo, useEffect } from 'react';
 import * as PIXI from 'pixi.js';
 import gsap from 'gsap';
 import { PixiPlugin } from 'gsap/PixiPlugin';
