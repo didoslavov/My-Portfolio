@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { forwardRef, useRef } from 'react';
-import Socials from '../Socials/Socials';
+import { useRef } from 'react';
+import Socials from '../socials/socials';
 
 import darkModeImage from '/public/portfolio-img-bg-dark.jpg';
 import lightModeImage from '/public/portfolio-img-bg-light.jpg';

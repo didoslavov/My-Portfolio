@@ -5,8 +5,8 @@ import * as PIXI from 'pixi.js';
 import gsap from 'gsap';
 import { PixiPlugin } from 'gsap/PixiPlugin';
 import { Stage } from '@pixi/react';
-import StaticStar from './StaticStar';
-import FallingStar from './FallingStar';
+import StaticStar from './static-star';
+import FallingStar from './falling-star';
 import { useTheme } from 'next-themes';
 
 gsap.registerPlugin(PixiPlugin);

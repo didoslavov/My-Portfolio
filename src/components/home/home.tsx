@@ -3,7 +3,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap, { Elastic } from 'gsap';
 import React, { useRef } from 'react';
-import HeroImg from '../HeroImg/HeroImg';
+import HeroImg from '../hero-img/hero-img';
 
 const Home = () => {
     const stack = ['Java Script', 'React', 'Next', 'Node JS', 'Express'];

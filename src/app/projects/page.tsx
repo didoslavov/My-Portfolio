@@ -1,5 +1,4 @@
-import { BentoGridProjcts } from '@/components/Project/BentoGrid';
-import Project from '../../components/Project/Project';
+import { BentoGridProjcts } from '@/components/projects/projects';
 
 const Projects = () => {
     return (

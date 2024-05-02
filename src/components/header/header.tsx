@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import MobileButton from './Mobile/MobileButton';
-import ThemeButton from './ThemeButton';
-import MobileImage from './Mobile/MobileImage';
-import Nav from './Nav';
-import MobileNavMenu from './Mobile/MobileNavMenu';
+import MobileButton from './mobile/MobileButton';
+import ThemeButton from './theme-button';
+import MobileImage from './mobile/MobileImage';
+import Nav from './nav';
+import MobileNavMenu from './mobile/MobileNavMenu';
 import { useTheme } from 'next-themes';
 
 const Header = () => {
