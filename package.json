@@ -11,6 +11,8 @@
     "dependencies": {
         "@gsap/react": "^2.1.0",
         "@pixi/react": "^7.1.2",
+        "clsx": "^2.1.1",
+        "framer-motion": "^11.1.7",
         "gsap": "^3.12.5",
         "next": "14.2.1",
         "next-themes": "^0.3.0",
@@ -18,7 +20,8 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-icons": "^5.0.1",
-        "sharp": "^0.33.3"
+        "sharp": "^0.33.3",
+        "tailwind-merge": "^2.3.0"
     },
     "devDependencies": {
         "@types/gsap": "^3.0.0",
