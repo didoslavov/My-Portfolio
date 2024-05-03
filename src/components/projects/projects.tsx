@@ -1,31 +1,21 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
-import { BentoGrid, BentoGridItem } from '../ui/bento-grid';
 import { getAllProjects } from '@/api/github';
+import { BentoGrid, BentoGridItem } from '../ui/bento-grid';
+import { Project } from '@/types/projects';
 
 export async function BentoGridProjcts() {
-    const [loading, setLoading] = useState(true);
-    const projects = getAllProjects();
-
-    if (loading) {
-        return <Skeleton />;
-    }
+    const projects = await getAllProjects();
 
     return (
         <BentoGrid className="max-w-[1440px] mx-auto">
-            {projects.then((promise) =>
-                promise.map((p: any, i: number) => (
-                    <BentoGridItem
-                        key={i}
-                        name={p.name}
-                        description={p.description}
-                        header={p.header}
-                        image={p.image}
-                        className={i % 3 === 0 || i % 5 === 0 ? 'md:col-span-2' : ''}
-                    />
-                ))
-            )}
+            {projects?.map((p: Project, i: number) => (
+                <BentoGridItem
+                    key={p.id}
+                    name={p.name}
+                    description={p.description}
+                    image={p.image || ''}
+                    className={i % 3 === 0 || i % 5 === 0 ? 'md:col-span-2' : ''}
+                />
+            ))}
         </BentoGrid>
     );
 }
