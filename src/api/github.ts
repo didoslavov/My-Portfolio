@@ -1,6 +1,19 @@
-//TODO: Implement error handling
-
 import { Project } from '@/types/projects';
+
+interface ProjectImage {
+    repoName: string;
+    image: string | null;
+}
+
+const getProjectImage = async (repoName: string): Promise<ProjectImage> => {
+    const response = await fetch(`https://api.github.com/repos/didoslavov/${repoName}/contents/thumbnail.png`);
+    const imageData = await response.json();
+
+    return {
+        repoName,
+        image: imageData.download_url || null,
+    };
+};
 
 export const getAllProjects = async () => {
     try {
@@ -8,24 +21,15 @@ export const getAllProjects = async () => {
         if (!response.ok) {
             throw new Error('Error loading projects from GitHub Api');
         }
-        const projectsTemp = await response.json();
 
-        const thumbnailPromises = projectsTemp.map(async (p: Project) => {
-            const res = fetch(`https://api.github.com/repos/didoslavov/${p.name}/contents/thumbnail/thumbnail.png`);
-            const thumbnailData = res.then((response) => response.json());
-            return thumbnailData;
-        });
+        const repositories: Project[] = await response.json();
+        const projectImagesPromises = repositories.map((repo) => getProjectImage(repo.name));
+        const projectImages = await Promise.all(projectImagesPromises);
 
-        const projectsWithThumbnails = await Promise.all(thumbnailPromises);
-
-        const projectsWithImages = projectsTemp.map((p: Project, i: number) => {
-            return {
-                ...p,
-                image: projectsWithThumbnails[i],
-            };
-        });
-
-        return await projectsWithImages;
+        return repositories.map((r) => ({
+            ...r,
+            image: projectImages.find((p: ProjectImage) => p.repoName === r.name)?.image || null,
+        }));
     } catch (error) {
         console.log(error);
     }

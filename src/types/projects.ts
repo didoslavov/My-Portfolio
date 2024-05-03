@@ -2,5 +2,6 @@ export interface Project {
     id: number;
     name: string;
     private: boolean;
-    image: string;
+    image: string | null;
+    description: string;
 }
