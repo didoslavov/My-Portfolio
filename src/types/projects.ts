@@ -1,7 +1,11 @@
-export interface Project {
+export interface BaseProject {
     id: number;
     name: string;
     private: boolean;
-    image: string | null;
     description: string;
+    stargazers_count: number;
+}
+
+export interface Project extends BaseProject {
+    image: string;
 }

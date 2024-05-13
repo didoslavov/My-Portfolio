@@ -1,5 +1,5 @@
+import { Project } from '@/types/projects';
 import { cn } from '@/utils/cn';
-import Image from 'next/image';
 
 export const BentoGrid = ({ className, children }: { className?: string; children?: React.ReactNode }) => {
     return (
@@ -9,17 +9,7 @@ export const BentoGrid = ({ className, children }: { className?: string; childre
     );
 };
 
-export const BentoGridItem = ({
-    className,
-    name,
-    description,
-    image,
-}: {
-    className?: string;
-    name?: string | React.ReactNode;
-    description?: string | React.ReactNode;
-    image?: string;
-}) => {
+export const BentoGridItem = ({ project, className }: { project: Project; className: string }) => {
     return (
         <div
             className={cn(
@@ -27,9 +17,11 @@ export const BentoGridItem = ({
                 className
             )}>
             <div className="group-hover/bento:translate-x-2 transition duration-200 min-h-52">
-                <div style={{ backgroundImage: `url(${image})` }} className={`h-full bg-cover bg-center bg-opacity-30`}></div>
-                <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">{name}</div>
-                <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">{description}</div>
+                <div
+                    style={{ backgroundImage: `url(${project.image})` }}
+                    className={`h-full bg-cover bg-center bg-opacity-30`}></div>
+                <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">{project.name}</div>
+                <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">{project.description}</div>
             </div>
         </div>
     );
