@@ -6,7 +6,7 @@ export const runtime = 'edge';
 export async function GET(req: NextRequest, res: NextResponse) {
     const owner = 'didoslavov';
     const imagePath = 'thumbnail.png';
-    const token = process.env.GITHUB_API_TOKEN;
+    const token = process.env.NEXT_PUBLIC_GITHUB_API_TOKEN;
 
     const reposResponse = await fetch(`https://api.github.com/users/${owner}/repos`, {
         headers: { Authorization: `Bearer ${token}` },

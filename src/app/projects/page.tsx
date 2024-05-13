@@ -2,7 +2,7 @@ import { BentoGridProjcts } from '@/components/projects/projects';
 import { Project } from '@/types/projects';
 
 const Projects = async () => {
-    const response = await fetch(`/api/github/projects`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/github/projects`);
     const projects: Project[] = await response.json();
 
     return (
