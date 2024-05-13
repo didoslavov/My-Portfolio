@@ -24,7 +24,7 @@ export async function getProjects() {
         })
     );
 
-    console.log(repos.filter(Boolean));
+    console.log(repos);
 
-    return repos.filter(Boolean) as Project[];
+    return repos.filter(Boolean).sort((a, b) => (b?.stargazers_count || 0) - (a?.stargazers_count || 0)) as Project[];
 }

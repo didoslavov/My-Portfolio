@@ -14,14 +14,21 @@ export function BentoGridProjcts({ projects }: { projects: Project[] }) {
     });
 
     return (
-        <div ref={contentRef} className="max-w-[1440px] mx-auto">
-            <BentoGrid>
-                {projects?.map(
-                    (p: Project, i: number) =>
-                        p && (
-                            <BentoGridItem key={p.id} project={p} className={i % 3 === 0 || i % 5 === 0 ? 'md:col-span-2' : ''} />
-                        )
-                )}
+        <div ref={contentRef} className="w-full">
+            <BentoGrid className="">
+                {projects?.map((p: Project, i: number) => {
+                    const row = Math.floor(i / 3);
+                    const positionInRow = i % 3;
+                    let className;
+                    if (row % 3 === 0) {
+                        className = positionInRow === 1 ? 'md:col-span-6' : 'md:col-span-3';
+                    } else if (row % 3 === 1) {
+                        className = 'md:col-span-4';
+                    } else {
+                        className = positionInRow === 1 ? 'md:col-span-6' : 'md:col-span-3';
+                    }
+                    return p && <BentoGridItem key={p.id} project={p} className={className} />;
+                })}
             </BentoGrid>
         </div>
     );

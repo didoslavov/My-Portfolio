@@ -6,7 +6,7 @@ const Projects = async () => {
     const projects: Project[] = await getProjects();
 
     return (
-        <section className="m-auto flex flex-wrap max-w-[1440px] gap-8 justify-between">
+        <section className="mx-auto flex flex-wrap max-w-[1440px] gap-8 justify-between">
             <BentoGridProjcts projects={projects} />
         </section>
     );
