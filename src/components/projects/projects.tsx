@@ -3,30 +3,20 @@
 import { getAllProjects } from '@/api/github';
 import { BentoGrid, BentoGridItem } from '../ui/bento-grid';
 import { Project } from '@/types/projects';
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { animatePage } from '@/utils/animatePage';
 
 export async function BentoGridProjcts() {
     const contentRef = useRef<HTMLDivElement>(null);
-    const [projects, setProjects] = useState<Project[]>([]);
+    const projects = await getAllProjects();
 
     useGSAP(() => {
         animatePage(contentRef);
     }, []);
 
-    useEffect(() => {
-        async function getProjects() {
-            const res: Project[] | undefined = await getAllProjects();
-
-            res && setProjects(res);
-        }
-
-        getProjects();
-    }, []);
-
     return (
-        <div ref={contentRef} className="max-w-[1440px] mx-auto">
+        <div className="max-w-[1440px] mx-auto">
             <BentoGrid>
                 {projects?.map((p: Project, i: number) => (
                     <BentoGridItem
