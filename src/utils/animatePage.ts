@@ -1,7 +1,7 @@
 import { RefObject } from 'react';
 import gsap, { Elastic } from 'gsap';
 
-export const animatePage = (contentRef: RefObject<HTMLDivElement>) => {
+export const animateListSlider = (contentRef: RefObject<HTMLDivElement>) => {
     const vsOpts = {
         slides: document.querySelectorAll('.slide'),
         list: document.querySelector('.slides'),
@@ -31,10 +31,12 @@ export const animatePage = (contentRef: RefObject<HTMLDivElement>) => {
     });
 
     vSlide.play();
+};
 
+export const animateEnterPage = (contentRef: RefObject<HTMLDivElement>) => {
     gsap.from(contentRef?.current, {
         transform: 'translateY(-100%)',
         duration: 2,
-        ease: 'power3.out',
+        ease: 'sine.inOut',
     });
 };
