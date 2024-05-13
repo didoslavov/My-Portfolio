@@ -1,10 +1,9 @@
 import { Project } from '@/types/projects';
-import { NextApiRequest, NextApiResponse } from 'next';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 export const runtime = 'edge';
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(req: NextRequest, res: NextResponse) {
     const owner = 'didoslavov';
     const imagePath = 'thumbnail.png';
     const token = process.env.GITHUB_API_TOKEN;
@@ -25,6 +24,8 @@ export async function GET(req: NextApiRequest, res: NextApiResponse) {
             return data.download_url ? { ...repo, image: data.download_url } : null;
         })
     );
+
+    console.log(repos.filter(Boolean));
 
     return NextResponse.json(repos.filter(Boolean));
 }

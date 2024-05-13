@@ -7,7 +7,7 @@ const Projects = async () => {
 
     return (
         <section className="m-auto flex flex-wrap max-w-[1440px] gap-8 justify-between">
-            <BentoGridProjcts projects={projects.filter((p: Project) => p.stargazers_count > 2)} />
+            <BentoGridProjcts projects={projects} />
         </section>
     );
 };
