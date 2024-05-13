@@ -3,7 +3,7 @@ import { Project } from '@/types/projects';
 
 const Projects = async () => {
     const response = await fetch(`${process.env.BASE_URL}/api/github/projects`);
-    const projects = await response.json();
+    const projects: Project[] = await response.json();
 
     return (
         <section className="m-auto flex flex-wrap max-w-[1440px] gap-8 justify-between">
