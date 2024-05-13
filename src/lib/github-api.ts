@@ -1,9 +1,8 @@
-import { Project } from '@/types/projects';
-import { NextRequest, NextResponse } from 'next/server';
+'use server';
 
-export const runtime = 'edge';
+import { BaseProject, Project } from '@/types/projects';
 
-export async function GET(req: NextRequest, res: NextResponse) {
+export async function getProjects() {
     const owner = 'didoslavov';
     const imagePath = 'thumbnail.png';
     const githubToken = process.env.NEXT_PUBLIC_GITHUB_API_TOKEN;
@@ -12,7 +11,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
         headers: { Authorization: `Bearer ${githubToken}` },
     });
 
-    const baseRepos: Project[] = await reposResponse.json();
+    const baseRepos: BaseProject[] = await reposResponse.json();
 
     const repos = await Promise.all(
         baseRepos.map(async (repo) => {
@@ -27,5 +26,5 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
     console.log(repos.filter(Boolean));
 
-    return NextResponse.json(repos.filter(Boolean));
+    return repos.filter(Boolean) as Project[];
 }

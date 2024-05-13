@@ -1,9 +1,9 @@
 import { BentoGridProjcts } from '@/components/projects/projects';
+import { getProjects } from '@/lib/github-api';
 import { Project } from '@/types/projects';
 
 const Projects = async () => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/github/projects`);
-    const projects: Project[] = await response.json();
+    const projects: Project[] = await getProjects();
 
     return (
         <section className="m-auto flex flex-wrap max-w-[1440px] gap-8 justify-between">
