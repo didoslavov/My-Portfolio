@@ -26,7 +26,10 @@ const Socials = React.forwardRef<HTMLUListElement>((props, ref) => {
                 </Link>
             </li>
             <li>
-                <Link target="_blank" href="#" className="text-silver text-2xl md:text-4xl dark:text-raisin-black">
+                <Link
+                    target="_blank"
+                    href="https://chocolate-chrysa-65.tiiny.site/"
+                    className="text-silver text-2xl md:text-4xl dark:text-raisin-black">
                     <IoIosPaper />
                 </Link>
             </li>
