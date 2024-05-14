@@ -25,7 +25,7 @@ const Header = () => {
 
     return (
         <header
-            className={`max-w-[1440px] z-50 flex justify-between pr-4 items-center m-auto mb-8 relative ${
+            className={`max-w-[1440px] z-50 flex justify-between pr-4 items-center m-auto relative ${
                 isMobileMenuOpen && 'sticky top-0 left-0'
             }`}>
             <div className="md:max-w-32 max-w-28 z-50">

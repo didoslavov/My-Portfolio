@@ -19,7 +19,7 @@ export function BentoGridProjcts({ projects }: { projects: Project[] }) {
                 <h2 className="text-center text-6xl mb-4">Projects</h2>
                 <p className="text-center text-2xl">Explore some of my latest work</p>
             </div>
-            <BentoGrid className="">
+            <BentoGrid>
                 {projects?.map((p: Project, i: number) => {
                     const row = Math.floor(i / 3);
                     const positionInRow = i % 3;
