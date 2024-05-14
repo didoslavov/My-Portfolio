@@ -6,7 +6,7 @@ import HeroImg from '../hero-img/hero-img';
 import { animateEnterPage, animateListSlider } from '@/utils/animatePage';
 
 const Home = () => {
-    const stack = ['JavaScript', 'React', 'Next', 'Node JS', 'Express'];
+    const stack = ['Vanilla JS', 'TS', 'React', 'Next', 'Node JS', 'Express'];
     const contentRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
@@ -17,14 +17,14 @@ const Home = () => {
     return (
         <div
             ref={contentRef}
-            className="mx-auto max-w-[1440px] relative flex flex-col md:flex-col md:gap-36 items-center justify-between lg:flex-row lg:justify-around py-8 lg:mt-28">
+            className="mx-auto max-w-[1440px] relative flex flex-col md:flex-col md:gap-36 items-center justify-between lg:flex-row gap-y-16 md:gap-y-0 lg:justify-around py-8 lg:mt-28">
             <div className="flex flex-col gap-12 items-start text-raisin-black  dark:text-silver drop-shadow-2xl">
                 <p className="text-3xl md:text-4xl lg:text-8xl">Hey, I&apos;m Dido.</p>
-                <div className="flex items-center gap-6 overflow-hidden text-4xl">
-                    <div className="h-12 text-end text-wine dark:text-sheen-gold">
+                <div className="flex items-center justify-center gap-6 overflow-hidden text-4xl">
+                    <div className="h-11 text-end text-wine dark:text-sheen-gold">
                         <ul className="slides">
                             {stack.map((tech, i) => (
-                                <li className="slide leading-[50px]" key={i}>
+                                <li className="slide leading-[49px]" key={i}>
                                     {tech}
                                 </li>
                             ))}

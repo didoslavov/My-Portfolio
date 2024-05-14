@@ -7,7 +7,7 @@ const Socials = React.forwardRef<HTMLUListElement>((props, ref) => {
     return (
         <ul
             ref={ref}
-            className="opacity-0 flex flex-col absolute top-4 left-8 md:justify-center gap-6 text-raisin-black dark:text-silver">
+            className="opacity-0 flex flex-col absolute top-4 left-2 sm:left-8 md:justify-center gap-6 text-raisin-black dark:text-silver">
             <li>
                 <a href="#" className="text-silver dark:text-raisin-black">
                     <AiFillGithub size={34} />
