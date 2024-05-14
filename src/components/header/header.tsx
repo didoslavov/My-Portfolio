@@ -38,7 +38,7 @@ const Header = () => {
                 className={`flex items-center gap-4 md:justify-between ${
                     isMobileMenuOpen && 'flex-row-reverse w-full justify-between'
                 }`}>
-                {!isMobileMenuOpen && <MobileImage isMobileMenuOpen={isMobileMenuOpen} />}
+                {/* {!isMobileMenuOpen && <MobileImage isMobileMenuOpen={isMobileMenuOpen} />} */}
                 {!isMobileMenuOpen && <MobileButton toggleMobileMenu={toggleMobile} isMobileMenuOpen={isMobileMenuOpen} />}
                 <Nav />
                 {isMobileMenuOpen && <MobileNavMenu toggleMobile={toggleMobile} isMobileMenuOpen={isMobileMenuOpen} />}
