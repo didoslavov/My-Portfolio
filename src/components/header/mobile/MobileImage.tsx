@@ -23,7 +23,7 @@ const MobileImage: React.FC<MobileImageProps> = ({ isMobileMenuOpen }) => {
                 height={500}
                 src="/portfolio-img-bg-light.jpg"
                 alt="Picture of me, Dido"
-                className={`mobile-img rounded-full w-14 h-14 drop-shadow-2xl  dark:hidden md:hidden lg:hidden ${
+                className={`mobile-img rounded-full w-10 h-10 drop-shadow-2xl dark:block md:dark:hidden hidden ${
                     isMobileMenuOpen ? 'hidden' : 'block'
                 }`}
             />
@@ -32,7 +32,7 @@ const MobileImage: React.FC<MobileImageProps> = ({ isMobileMenuOpen }) => {
                 height={500}
                 src="/portfolio-img-bg-dark.jpg"
                 alt="Picture of me, Dido"
-                className={`mobile-img rounded-full w-14 h-14 drop-shadow-2xl hidden dark:block md:dark:hidden lg:dark:hidden ${
+                className={`mobile-img rounded-full w-10 h-10 drop-shadow-2xl block dark:hidden sm:hidden ${
                     isMobileMenuOpen ? 'hidden' : 'block'
                 }`}
             />

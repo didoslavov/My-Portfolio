@@ -25,17 +25,25 @@ const Header = () => {
     };
 
     return (
-        <header className="max-w-[1440px] flex justify-between items-center m-auto mb-8 relative z-50">
-            <div className="max-w-32">
+        <header
+            className={`max-w-[1440px] flex justify-between pr-4 items-center m-auto mb-8 relative ${
+                isMobileMenuOpen && 'z-50 sticky top-0 left-0'
+            }`}>
+            <div className="md:max-w-32 max-w-28 z-50">
                 <Link href="/">
                     {resolvedTheme === 'dark' ? <Image src={logoBgDark} alt="Logo" /> : <Image src={logoBgLight} alt="Logo" />}
                 </Link>
             </div>
-            <ThemeButton isMobileMenuOpen={isMobileMenuOpen} toggleTheme={toggleTheme} />
-            {!isMobileMenuOpen && <MobileImage isMobileMenuOpen={isMobileMenuOpen} />}
-            {!isMobileMenuOpen && <MobileButton toggleMobileMenu={toggleMobile} isMobileMenuOpen={isMobileMenuOpen} />}
-            <Nav />
-            {isMobileMenuOpen && <MobileNavMenu toggleMobile={toggleMobile} isMobileMenuOpen={isMobileMenuOpen} />}
+            <div
+                className={`flex items-center gap-4 md:justify-between ${
+                    isMobileMenuOpen && 'flex-row-reverse w-full justify-between'
+                }`}>
+                {!isMobileMenuOpen && <MobileImage isMobileMenuOpen={isMobileMenuOpen} />}
+                {!isMobileMenuOpen && <MobileButton toggleMobileMenu={toggleMobile} isMobileMenuOpen={isMobileMenuOpen} />}
+                <Nav />
+                {isMobileMenuOpen && <MobileNavMenu toggleMobile={toggleMobile} isMobileMenuOpen={isMobileMenuOpen} />}
+                <ThemeButton isMobileMenuOpen={isMobileMenuOpen} toggleTheme={toggleTheme} />
+            </div>
         </header>
     );
 };

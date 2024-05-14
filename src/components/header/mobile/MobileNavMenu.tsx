@@ -1,6 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import MobileButton from './MobileButton';
+import Link from 'next/link';
 
 gsap.registerPlugin(useGSAP);
 
@@ -26,19 +27,19 @@ const MobileNavMenu = ({ isMobileMenuOpen, toggleMobile }: { isMobileMenuOpen: b
     return (
         <>
             {isMobileMenuOpen && <MobileButton isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />}
-            <div className="menu text-raisin-black dark:text-silver flex items-center justify-center backdrop-blur-xl py-4 px-4 absolute top-0 right-0 w-full h-screen shadow-md z-40 lg:hidden md:hidden">
+            <div className="menu text-raisin-black flex items-center justify-center backdrop-blur-2xl py-4 px-4 absolute top-0 right-0 w-full h-screen shadow-md z-40 lg:hidden md:hidden">
                 <ul className="text-4xl">
                     <li className="mb-8 li">
-                        <a href="#">Projects</a>
+                        <Link href="/projects">Projects</Link>
                     </li>
                     <li className="mb-8 li">
-                        <a href="#">About me</a>
+                        <Link href="#">About me</Link>
                     </li>
                     <li className="mb-8 li">
-                        <a href="#">Contacts</a>
+                        <Link href="#">Contacts</Link>
                     </li>
                     <li className="mb-8 li">
-                        <a href="#">Guest book</a>
+                        <Link href="#">Guest book</Link>
                     </li>
                 </ul>
             </div>
