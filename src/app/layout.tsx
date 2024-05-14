@@ -22,7 +22,7 @@ export default function RootLayout({
             <body className={`${concertOne.className} dark:bg-raisin-black bg-silver-100`}>
                 <Providers>
                     <Header />
-                    {/* <Canvas /> */}
+                    <Canvas />
                     <main>{children}</main>
                 </Providers>
             </body>
