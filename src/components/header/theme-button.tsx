@@ -38,7 +38,7 @@ const ThemeButton: React.FC<ThemeButtonProps> = ({ toggleTheme, isMobileMenuOpen
                 isMobileMenuOpen ? 'block' : 'hidden'
             } lg:block md:block transition-opacity duration-700 theme-btn`}>
             {resolvedTheme === 'dark' ? (
-                <BsSunFill size={26} className="text-sheen-gold sun" />
+                <BsSunFill className="text-sheen-gold sun text-xl md:text-3xl" />
             ) : (
                 <BsFillMoonFill size={26} className="text-wine moon" />
             )}
