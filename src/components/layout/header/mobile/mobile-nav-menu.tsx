@@ -28,7 +28,7 @@ const MobileNavMenu = ({ isMobileMenuOpen, toggleMobile }: { isMobileMenuOpen: b
         <>
             {isMobileMenuOpen && <MobileButton isMobileMenuOpen={isMobileMenuOpen} toggleMobileMenu={toggleMobileMenu} />}
             <div className="menu dark:text-silver-300 text-raisin-black flex items-center justify-center bg-silver dark:bg-raisin-black bg-opacity-70 backdrop-blur-2xl py-4 px-4 absolute top-0 right-0 w-full h-screen shadow-md z-40 lg:hidden md:hidden">
-                <ul className="text-4xl">
+                <ul className="text-4xl" onClick={toggleMobileMenu}>
                     <li className="mb-8 li">
                         <Link href="/projects">Projects</Link>
                     </li>

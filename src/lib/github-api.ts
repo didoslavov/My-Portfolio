@@ -24,8 +24,6 @@ export async function getProjects() {
         })
     );
 
-    console.log(repos);
-
     return repos
         .filter(Boolean)
         .sort((a, b) => new Date(b?.created_at || 0).getTime() - new Date(a?.created_at || 0).getTime()) as Project[];
