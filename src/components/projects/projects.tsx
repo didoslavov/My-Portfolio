@@ -15,6 +15,10 @@ export function BentoGridProjcts({ projects }: { projects: Project[] }) {
 
     return (
         <div ref={contentRef} className="w-full">
+            <div className="w-full text-center mb-16 text-raisin-black dark:text-silver">
+                <h2 className="text-center text-6xl mb-4">Projects</h2>
+                <p className="text-center text-2xl">Explore some of my latest work</p>
+            </div>
             <BentoGrid className="">
                 {projects?.map((p: Project, i: number) => {
                     const row = Math.floor(i / 3);
