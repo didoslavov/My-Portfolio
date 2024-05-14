@@ -15,7 +15,8 @@ export const BentoGridItem = ({ project, className }: { project: Project; classN
                 className
             )}>
             <Link
-                href={project.html_url}
+                href={project.homepage || project.html_url}
+                target="_blank"
                 className="group-hover/bento:-translate-y-2 transition duration-200 min-h-64 text-raisin-black dark:text-silver">
                 <div
                     style={{ backgroundImage: `url(${project.image})` }}

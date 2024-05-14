@@ -6,6 +6,7 @@ export interface BaseProject {
     language: string;
     stargazers_count: number;
     html_url: string;
+    homepage: string;
 }
 
 export interface Project extends BaseProject {
