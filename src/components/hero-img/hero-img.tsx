@@ -54,16 +54,16 @@ const HeroImg = () => {
                 height={800}
                 src={darkModeImage}
                 alt="Picture of me, Dido"
-                className="space-x-3 z-50 relative rounded-xl md:w-[360px] md:h-[470px] block dark:hidden"
+                className="space-x-3 z-50 relative rounded-xl w-[260px] md:w-[360px] lg:h-[470px] block dark:hidden"
             />
             <Image
                 width={800}
                 height={800}
                 src={lightModeImage}
                 alt="Picture of me, Dido"
-                className="space-x-3 z-50 relative rounded-xl md:w-[360px] md:h-[470px] hidden dark:block"
+                className="space-x-3 z-50 relative rounded-xl w-[260px] md:w-[360px] lg:h-[470px] hidden dark:block"
             />
-            <div className="expanding-div z-10 rounded-xl w-[180px] h-[370px] md:w-[360px] md:h-[470px] block opacity-50 absolute -top-6 -right-6 bg-wine-700 dark:bg-sheen-gold-100">
+            <div className="expanding-div z-10 rounded-xl h-full md:w-[360px] md:h-[470px] block opacity-50 absolute -top-6 -right-6 bg-wine-700 dark:bg-sheen-gold-100">
                 <Socials ref={socialsRef} />
             </div>
             <div className="expanding-div z-10 rounded-xl md:w-[360px] md:h-[470px] block opacity-50 absolute -top-4 -right-4 bg-wine-800 dark:bg-sheen-gold-200"></div>
