@@ -2,6 +2,7 @@ import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 import { IoIosPaper } from 'react-icons/io';
 
 import React from 'react';
+import Link from 'next/link';
 
 const Socials = React.forwardRef<HTMLUListElement>((props, ref) => {
     return (
@@ -9,19 +10,25 @@ const Socials = React.forwardRef<HTMLUListElement>((props, ref) => {
             ref={ref}
             className="opacity-0 flex flex-col absolute top-4 left-2 sm:left-8 md:justify-center gap-6 text-raisin-black dark:text-silver">
             <li>
-                <a href="#" className="text-silver text-2xl md:text-4xl dark:text-raisin-black">
+                <Link
+                    target="_blank"
+                    href="https://github.com/didoslavov"
+                    className="text-silver text-2xl md:text-4xl dark:text-raisin-black">
                     <AiFillGithub />
-                </a>
+                </Link>
             </li>
             <li>
-                <a href="#" className="text-silver text-2xl md:text-4xl dark:text-raisin-black">
+                <Link
+                    target="_blank"
+                    href="https://www.linkedin.com/in/deyan-slavov-14648a207/"
+                    className="text-silver text-2xl md:text-4xl dark:text-raisin-black">
                     <AiFillLinkedin />
-                </a>
+                </Link>
             </li>
             <li>
-                <a href="#" className="text-silver text-2xl md:text-4xl dark:text-raisin-black">
+                <Link target="_blank" href="#" className="text-silver text-2xl md:text-4xl dark:text-raisin-black">
                     <IoIosPaper />
-                </a>
+                </Link>
             </li>
         </ul>
     );
