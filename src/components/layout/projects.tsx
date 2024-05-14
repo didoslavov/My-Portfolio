@@ -1,6 +1,6 @@
 'use client';
 
-import { BentoGrid, BentoGridItem } from '../ui/bento-grid';
+import { BentoGrid, BentoGridItem } from './bento-grid';
 import { Project } from '@/types/projects';
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';

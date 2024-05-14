@@ -1,11 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import MobileButton from './mobile/MobileButton';
+import MobileButton from './mobile/mobile-button';
 import ThemeButton from './theme-button';
-import MobileImage from './mobile/MobileImage';
 import Nav from './nav';
-import MobileNavMenu from './mobile/MobileNavMenu';
+import MobileNavMenu from './mobile/mobile-nav-menu';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 import logoBgLight from '/public/logo-bg-light.png';
@@ -38,7 +37,6 @@ const Header = () => {
                 className={`flex items-center gap-4 md:justify-between ${
                     isMobileMenuOpen && 'flex-row-reverse w-full justify-between'
                 }`}>
-                {/* {!isMobileMenuOpen && <MobileImage isMobileMenuOpen={isMobileMenuOpen} />} */}
                 {!isMobileMenuOpen && <MobileButton toggleMobileMenu={toggleMobile} isMobileMenuOpen={isMobileMenuOpen} />}
                 <Nav />
                 {isMobileMenuOpen && <MobileNavMenu toggleMobile={toggleMobile} isMobileMenuOpen={isMobileMenuOpen} />}

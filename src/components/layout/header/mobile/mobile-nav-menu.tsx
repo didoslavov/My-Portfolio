@@ -1,6 +1,6 @@
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import MobileButton from './MobileButton';
+import MobileButton from './mobile-button';
 import Link from 'next/link';
 
 gsap.registerPlugin(useGSAP);

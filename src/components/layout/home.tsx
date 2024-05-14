@@ -2,7 +2,7 @@
 
 import { useGSAP } from '@gsap/react';
 import React, { useRef } from 'react';
-import HeroImg from '../hero-img/hero-img';
+import HeroImg from '../ui/hero-img';
 import { animateEnterPage, animateListSlider } from '@/utils/animatePage';
 
 const Home = () => {

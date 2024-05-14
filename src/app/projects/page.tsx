@@ -1,4 +1,4 @@
-import { BentoGridProjcts } from '@/components/projects/projects';
+import { BentoGridProjcts } from '@/components/layout/projects';
 import { getProjects } from '@/lib/github-api';
 import { Project } from '@/types/projects';
 

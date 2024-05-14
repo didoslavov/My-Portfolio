@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { useRef } from 'react';
-import Socials from '../socials/socials';
+import Socials from './socials';
 
 import darkModeImage from '/public/portfolio-img-bg-dark.jpg';
 import lightModeImage from '/public/portfolio-img-bg-light.jpg';
