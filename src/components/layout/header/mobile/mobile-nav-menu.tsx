@@ -33,7 +33,7 @@ const MobileNavMenu = ({ isMobileMenuOpen, toggleMobile }: { isMobileMenuOpen: b
                         <Link href="/projects">Projects</Link>
                     </li>
                     <li className="mb-8 li">
-                        <Link href="#">About me</Link>
+                        <Link href="/about">About me</Link>
                     </li>
                     <li className="mb-8 li">
                         <Link href="#">Contacts</Link>
