@@ -1,42 +1,46 @@
 'use client';
-import { TbBrandTailwind, TbBrandReact, TbBrandNextjs, TbBrandAngular, TbBrandNodejs } from 'react-icons/tb';
 
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { horizontalLoop } from '@/utils/horizontalAnimation';
-
-const boxesArr = [
-    <TbBrandNextjs key={1} />,
-    <TbBrandReact key={2} />,
-    <TbBrandTailwind key={3} />,
-    <TbBrandAngular key={4} />,
-    <TbBrandNodejs key={5} />,
-];
+import { logos } from '@/constans/logos';
+import Image from 'next/image';
 
 const Marquee = () => {
     const marqueeRef = useRef<HTMLDivElement>(null);
+    const tl = useRef<gsap.core.Timeline>();
 
     useGSAP(
         () => {
-            const boxes = gsap.utils.toArray('.box') as HTMLElement[];
-            gsap.set(boxes, {
+            const items = gsap.utils.toArray('.box') as HTMLElement[];
+            gsap.set(items, {
                 backgroundColor: gsap.utils.wrap(['bg-wine', 'bg-silver']),
             });
-            horizontalLoop(boxes, { repeat: -1 });
+            tl.current = horizontalLoop(items, { repeat: -1 });
         },
         {
             scope: marqueeRef,
         }
     );
 
+    const handleMouseEnter = () => {
+        tl.current?.pause();
+    };
+
+    const handleMouseLeave = () => {
+        tl.current?.resume();
+    };
+
     return (
         <div
-            className="flex items-center text-3xl text-wine dark:text-sheen-gold relative overflow-hidden gap-2"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className="flex items-center w-2/3 bg-raisin-black dark:bg-silver dark:bg-opacity-30 bg-opacity-20 rounded-xl p-4 relative overflow-hidden gap-2"
             ref={marqueeRef}>
-            {boxesArr.map((el) => (
-                <div key={`box-${el}`} className="box mr-2">
-                    {el}
+            {logos.map((logo) => (
+                <div key={logo.id} className="box mr-2">
+                    <Image src={logo.src} alt={logo.alt} className="min-w-16" />
                 </div>
             ))}
         </div>
