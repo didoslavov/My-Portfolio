@@ -20,9 +20,9 @@ const Canvas = () => {
         height: 600,
     });
 
-    const smallStarsCount = 2000;
-    const bigStarsCount = 50;
-    const fallingStarsCount = 20;
+    const smallStarsCount = 500;
+    const bigStarsCount = 30;
+    const fallingStarsCount = 10;
 
     useEffect(() => {
         updateCanvasDimensions();

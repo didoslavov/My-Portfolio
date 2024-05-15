@@ -1,3 +1,4 @@
+import { FaUserAstronaut } from 'react-icons/fa';
 import Image from 'next/image';
 import { useRef } from 'react';
 import Socials from './socials';
@@ -9,6 +10,7 @@ import gsap from 'gsap';
 const HeroImg = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const socialsRef = useRef<HTMLUListElement>(null);
+    const astronautRef = useRef<HTMLDivElement>(null);
 
     const handleHover = () => {
         if (containerRef.current) {
@@ -26,6 +28,7 @@ const HeroImg = () => {
         }
 
         gsap.to(socialsRef.current, { alpha: 1, duration: 0.5 });
+        gsap.to(astronautRef.current, { alpha: 1, duration: 0.5, rotate: -45 });
     };
 
     const handleHoverExit = () => {
@@ -45,6 +48,7 @@ const HeroImg = () => {
         }
 
         gsap.to(socialsRef.current, { alpha: 0, duration: 0.5 });
+        gsap.to(astronautRef.current, { alpha: 0, duration: 0.5, rotate: 0 });
     };
 
     return (
@@ -65,6 +69,9 @@ const HeroImg = () => {
             />
             <div className="expanding-div z-10 rounded-xl h-full md:w-[360px] md:h-[470px] block opacity-50 absolute -top-6 -right-6 bg-wine-700 dark:bg-sheen-gold-100">
                 <Socials ref={socialsRef} />
+                <div ref={astronautRef} className="text-6xl absolute top-4 left-4 text-silver">
+                    <FaUserAstronaut />
+                </div>
             </div>
             <div className="expanding-div z-10 rounded-xl md:w-[360px] md:h-[470px] block opacity-50 absolute -top-4 -right-4 bg-wine-800 dark:bg-sheen-gold-200"></div>
             <div className="expanding-div z-10 rounded-xl md:w-[360px] md:h-[470px] block opacity-50 absolute -top-2 -right-2 bg-wine-900 dark:bg-sheen-gold-300"></div>
