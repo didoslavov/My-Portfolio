@@ -1,15 +1,15 @@
-import { BentoGridProjcts } from '@/components/layout/projects';
-import { getProjects } from '@/lib/github-api';
-import { Project } from '@/types/projects';
+import { BentoGridProjcts } from "@/components/layout/projects";
+import { getProjects } from "@/lib/github-api";
+import { Project } from "@/types/projects";
 
 const Projects = async () => {
-    const projects: Project[] = await getProjects();
+  const projects: Project[] = await getProjects();
 
-    return (
-        <section className="mx-auto flex flex-wrap max-w-[1440px] gap-8 justify-between">
-            <BentoGridProjcts projects={projects} />
-        </section>
-    );
+  return (
+    <section className="mx-auto flex max-w-[1440px] flex-wrap justify-between gap-8">
+      <BentoGridProjcts projects={projects} />
+    </section>
+  );
 };
 
 export default Projects;

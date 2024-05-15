@@ -1,41 +1,42 @@
-'use client';
+"use client";
 
-import { useGSAP } from '@gsap/react';
-import React, { useRef } from 'react';
-import HeroImg from '../ui/hero-img';
-import { animateEnterPage, animateListSlider } from '@/utils/animatePage';
+import { useGSAP } from "@gsap/react";
+import React, { useRef } from "react";
+import HeroImg from "../ui/hero-img";
+import { animateEnterPage, animateListSlider } from "@/utils/animatePage";
 
 const Home = () => {
-    const stack = ['Vanilla JS', 'TS', 'React', 'Next', 'Node JS', 'Express'];
-    const contentRef = useRef<HTMLDivElement>(null);
+  const stack = ["Vanilla JS", "TS", "React", "Next", "Node JS", "Express"];
+  const contentRef = useRef<HTMLDivElement>(null);
 
-    useGSAP(() => {
-        animateListSlider(contentRef);
-        animateEnterPage(contentRef);
-    });
+  useGSAP(() => {
+    animateListSlider(contentRef);
+    animateEnterPage(contentRef);
+  });
 
-    return (
-        <div
-            ref={contentRef}
-            className="will-change-auto mx-auto max-w-[1440px] relative flex flex-col md:flex-col md:gap-36 items-center justify-between xl:flex-row gap-y-24 lg:justify-around py-8 xl:mt-20">
-            <div className="flex flex-col gap-12 items-start text-raisin-black  dark:text-silver drop-shadow-2xl">
-                <p className="text-3xl md:text-4xl lg:text-8xl">Hey, I&apos;m Dido.</p>
-                <div className="flex items-center justify-center gap-6 overflow-hidden text-4xl">
-                    <div className="h-11 text-end text-wine dark:text-sheen-gold">
-                        <ul className="slides">
-                            {stack.map((tech, i) => (
-                                <li className="slide leading-[49px]" key={i}>
-                                    {tech}
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <p className="leading-[50px]">Developer</p>
-                </div>
-            </div>
-            <HeroImg />
+  return (
+    <div
+      ref={contentRef}
+      className="relative mx-auto flex max-w-[1440px] flex-col items-center justify-between gap-y-24 py-8 will-change-auto md:flex-col md:gap-36 lg:justify-around xl:mt-20 xl:flex-row"
+    >
+      <div className="flex flex-col items-start gap-12 text-raisin-black  drop-shadow-2xl dark:text-silver">
+        <p className="text-3xl md:text-4xl lg:text-8xl">Hey, I&apos;m Dido.</p>
+        <div className="flex items-center justify-center gap-6 overflow-hidden text-4xl">
+          <div className="h-11 text-end text-wine dark:text-sheen-gold">
+            <ul className="slides">
+              {stack.map((tech, i) => (
+                <li className="slide leading-[49px]" key={i}>
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <p className="leading-[50px]">Developer</p>
         </div>
-    );
+      </div>
+      <HeroImg />
+    </div>
+  );
 };
 
 export default Home;
