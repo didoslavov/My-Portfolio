@@ -69,7 +69,7 @@ const HeroImg = () => {
             />
             <div className="expanding-div z-10 rounded-xl h-full md:w-[360px] md:h-[470px] block opacity-50 absolute -top-6 -right-6 bg-wine-700 dark:bg-sheen-gold-100">
                 <Socials ref={socialsRef} />
-                <div ref={astronautRef} className="text-6xl absolute top-4 left-4 text-silver">
+                <div ref={astronautRef} className="text-6xl absolute top-4 left-4 text-silver dark:text-raisin-black">
                     <FaUserAstronaut />
                 </div>
             </div>
