@@ -2,7 +2,7 @@ import React from "react";
 
 const Sumamry = () => {
   return (
-    <div className="flex flex-col gap-4 text-xl text-raisin-black dark:text-silver">
+    <div className="flex flex-col gap-4 text-base text-raisin-black dark:text-silver md:text-xl">
       <p>
         Hi! I&apos;m Deyan Slavov -{" "}
         <span className="text-wine dark:text-sheen-gold">Dido</span>. At the end
@@ -28,12 +28,10 @@ const Sumamry = () => {
       <p>
         As I continue to grow as a developer, I&apos;m excited to bring my
         unique perspective, dedication, and enthusiasm to every project I start.
-        Resonating with Terry Pratchett&apos;s words from Discworld -
-        <span className="text-2xl text-wine dark:text-sheen-gold">&ldquo;</span>
-        So much universe, and so little time.
-        <span className="text-2xl text-wine dark:text-sheen-gold">
-          &rdquo;
-        </span>{" "}
+        Resonating with Terry Pratchett&apos;s words from Discworld -{" "}
+        <span className="text-wine dark:text-sheen-gold">
+          &ldquo;So much universe, and so little time.&rdquo;
+        </span>
         - I&apos;m reminded of the boundless opportunities within the JavaScript
         ecosystem.
       </p>

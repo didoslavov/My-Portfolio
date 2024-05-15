@@ -88,6 +88,5 @@ export function horizontalLoop(items: HTMLElement[], config: Config = {}) {
   if (tl.vars.onReverseComplete) {
     tl.vars.onReverseComplete();
   }
-  tl.reverse();
   return tl;
 }

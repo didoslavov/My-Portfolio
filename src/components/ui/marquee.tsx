@@ -4,10 +4,14 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { horizontalLoop } from "@/utils/horizontalAnimation";
-import { logos } from "@/constans/logos";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
-const Marquee = () => {
+interface MarqueeProps {
+  items: { id: number; src: StaticImageData; alt: string }[];
+  className: string;
+}
+
+const Marquee = ({ items, className }: MarqueeProps) => {
   const marqueeRef = useRef<HTMLDivElement>(null);
   const tl = useRef<gsap.core.Timeline>();
 
@@ -36,12 +40,12 @@ const Marquee = () => {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className="relative flex w-2/3 items-center gap-2 overflow-hidden rounded-xl bg-raisin-black bg-opacity-20 p-4 dark:bg-silver dark:bg-opacity-30"
+      className="relative flex w-5/6 items-center gap-2 overflow-hidden rounded-xl bg-raisin-black bg-opacity-20 p-4 dark:bg-silver dark:bg-opacity-30 md:w-2/3"
       ref={marqueeRef}
     >
-      {logos.map((logo) => (
-        <div key={logo.id} className="box mr-2">
-          <Image src={logo.src} alt={logo.alt} className="min-w-16" />
+      {items.map((item, i) => (
+        <div key={item.id} className={`box mr-2 ${className}`}>
+          <Image src={item.src} alt={item.alt} className="w-full" />
         </div>
       ))}
     </div>
