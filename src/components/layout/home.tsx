@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <div
             ref={contentRef}
-            className="will-change-auto mx-auto max-w-[1440px] relative flex flex-col md:flex-col md:gap-36 items-center justify-between lg:flex-row gap-y-24 lg:justify-around py-8 lg:mt-28">
+            className="will-change-auto mx-auto max-w-[1440px] relative flex flex-col md:flex-col md:gap-36 items-center justify-between xl:flex-row gap-y-24 lg:justify-around py-8 xl:mt-20">
             <div className="flex flex-col gap-12 items-start text-raisin-black  dark:text-silver drop-shadow-2xl">
                 <p className="text-3xl md:text-4xl lg:text-8xl">Hey, I&apos;m Dido.</p>
                 <div className="flex items-center justify-center gap-6 overflow-hidden text-4xl">

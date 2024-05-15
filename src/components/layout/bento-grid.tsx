@@ -11,7 +11,7 @@ export const BentoGridItem = ({ project, className }: { project: Project; classN
     return (
         <div
             className={cn(
-                'rounded-xl group/bento hover:shadow-lg transition duration-200 shadow-wine dark:shadow-sheen-gold hover:cursor-pointer p-4 justify-between flex flex-col space-y-4',
+                'rounded-xl group/bento hover:shadow-lg transition col-start-2 col-end-11 duration-200 shadow-wine dark:shadow-sheen-gold hover:cursor-pointer p-4 justify-between flex flex-col space-y-4',
                 className
             )}>
             <Link
@@ -20,7 +20,7 @@ export const BentoGridItem = ({ project, className }: { project: Project; classN
                 className="group-hover/bento:-translate-y-2 transition duration-200 min-h-64 text-raisin-black dark:text-silver">
                 <div
                     style={{ backgroundImage: `url(${project.image})` }}
-                    className={`h-64 bg-cover overflow-hidden bg-center bg-opacity-30 mb-10 rounded-xl relative before:absolute before:-top-1 before:-left-8 before:transition-all ${
+                    className={`h-64 bg-cover overflow-hidden bg-center bg-opacity-30 mb-4 md:mb-10 rounded-xl relative before:absolute before:-top-1 before:-left-8 before:transition-all ${
                         project.language.toLowerCase() === 'javascript'
                             ? 'before:content-["JS"] before:bg-sheen-gold'
                             : 'before:content-["TS"] before:bg-blue-700'
