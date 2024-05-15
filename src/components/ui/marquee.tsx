@@ -9,9 +9,10 @@ import Image, { StaticImageData } from "next/image";
 interface MarqueeProps {
   items: { id: number; src: StaticImageData; alt: string }[];
   className: string;
+  reversed?: boolean;
 }
 
-const Marquee = ({ items, className }: MarqueeProps) => {
+const Marquee = ({ items, className, reversed }: MarqueeProps) => {
   const marqueeRef = useRef<HTMLDivElement>(null);
   const tl = useRef<gsap.core.Timeline>();
 
@@ -21,7 +22,7 @@ const Marquee = ({ items, className }: MarqueeProps) => {
       gsap.set(items, {
         backgroundColor: gsap.utils.wrap(["bg-wine", "bg-silver"]),
       });
-      tl.current = horizontalLoop(items, { repeat: -1 });
+      tl.current = horizontalLoop(items, { repeat: -1, reversed });
     },
     {
       scope: marqueeRef,

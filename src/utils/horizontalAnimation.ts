@@ -12,7 +12,14 @@ interface Config {
 export function horizontalLoop(items: HTMLElement[], config: Config = {}) {
   items = gsap.utils.toArray(items);
 
-  const { repeat, paused, speed = 1, snap = 1, paddingRight = "0" } = config;
+  const {
+    repeat,
+    paused,
+    speed = 1,
+    snap = 1,
+    paddingRight = "0",
+    reversed,
+  } = config;
 
   const pixelsPerSecond = speed * 100;
   const snapFunc = snap === false ? (v: number) => v : gsap.utils.snap(snap);
@@ -88,5 +95,8 @@ export function horizontalLoop(items: HTMLElement[], config: Config = {}) {
   if (tl.vars.onReverseComplete) {
     tl.vars.onReverseComplete();
   }
+
+  reversed && tl.reverse();
+
   return tl;
 }
