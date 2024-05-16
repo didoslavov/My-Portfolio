@@ -15,7 +15,6 @@ import reactts from "/public/certificates/reactts.png";
 import zod from "/public/certificates/zod.png";
 
 export const certificates = [
-  { id: 1, src: diploma, alt: "Certificate image" },
   { id: 2, src: basics, alt: "Certificate image" },
   { id: 3, src: fund, alt: "Certificate image" },
   { id: 4, src: advanced, alt: "Certificate image" },
@@ -25,6 +24,7 @@ export const certificates = [
   { id: 8, src: angular, alt: "Certificate image" },
   { id: 9, src: mysql, alt: "Certificate image" },
   { id: 10, src: html, alt: "Certificate image" },
+  { id: 1, src: diploma, alt: "Certificate image" },
   { id: 11, src: htmlcss, alt: "Certificate image" },
   { id: 12, src: htmlsass, alt: "Certificate image" },
   { id: 13, src: ts, alt: "Certificate image" },

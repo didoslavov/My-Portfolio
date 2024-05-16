@@ -17,6 +17,7 @@ const config: Config = {
       colors: {
         "sheen-gold": {
           DEFAULT: "#CAA45D",
+          500: "#a2834a",
           300: "#dfc89e",
           200: "#e5d2ae",
           100: "#eadbbe",

@@ -57,7 +57,7 @@ const MobileNavMenu = ({
             <Link href="/about">About me</Link>
           </li>
           <li className="li mb-8">
-            <Link href="#">Contacts</Link>
+            <Link href="/contact">Contacts</Link>
           </li>
           <li className="li mb-8">
             <Link href="#">Guest book</Link>

@@ -45,8 +45,8 @@ export const BentoGridItem = ({
           } before before:z-50 before:-rotate-45 before:px-10 before:py-2 before:text-xl before:text-silver-100`}
         />
         <h3 className="text-raisin-black-600 mb-2 mt-2 font-sans text-xl font-black dark:text-silver">
-          <div className="flex justify-between">
-            {project.name}
+          <div className="flex justify-between capitalize">
+            {project.name.split("-").join(" ")}
             <span className="flex items-center gap-1 text-lg font-bold">
               <FaStar className="text-wine dark:text-sheen-gold" />
               {project.stargazers_count}
