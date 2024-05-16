@@ -35,7 +35,8 @@ export const animateListSlider = (contentRef: RefObject<HTMLDivElement>) => {
 
 export const animateEnterPage = (contentRef: RefObject<HTMLDivElement>) => {
   gsap.from(contentRef?.current, {
-    transform: "translateY(-100%)",
+    transform: "translateX(-100%)",
+    opacity: 0,
     duration: 2,
     ease: "sine.inOut",
   });
