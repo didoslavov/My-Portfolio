@@ -37,47 +37,47 @@ const Contact = () => {
         <div className="mb-5">
           <label
             htmlFor="name"
-            className="mb-3 block text-xl text-raisin-black dark:text-sheen-gold"
+            className="mb-3 block text-lg text-raisin-black dark:text-sheen-gold"
           >
             Full Name
           </label>
           <input
             type="text"
-            placeholder="Full Name"
-            className="placeholder:text-ls w-full rounded-md border border-transparent bg-raisin-black bg-opacity-20 px-6 py-3 text-base text-gray-700 outline-none placeholder:text-taupe-gray focus:border-wine focus:shadow-md dark:bg-silver dark:focus:border-sheen-gold"
+            placeholder="John Doe"
+            className="w-full rounded-md border border-transparent bg-raisin-black bg-opacity-20 px-6 py-3 text-base text-raisin-black outline-none placeholder:text-lg placeholder:text-taupe-gray focus:border-wine focus:shadow-md dark:bg-silver dark:focus:border-sheen-gold"
             {...register("name", { required: true })}
           />
         </div>
         <div className="mb-5">
           <label
             htmlFor="email"
-            className="mb-3 block text-base text-raisin-black dark:text-sheen-gold"
+            className="mb-3 block text-lg text-raisin-black dark:text-sheen-gold"
           >
             Email Address
           </label>
           <input
             type="email"
             placeholder="example@domain.com"
-            className="placeholder:text-ls w-full rounded-md border border-transparent bg-raisin-black bg-opacity-20 px-6 py-3 text-base text-gray-700 outline-none placeholder:text-taupe-gray focus:border-wine focus:shadow-md dark:bg-silver dark:focus:border-sheen-gold"
+            className="w-full rounded-md border border-transparent bg-raisin-black bg-opacity-20 px-6 py-3 text-lg text-raisin-black outline-none placeholder:text-lg placeholder:text-taupe-gray focus:border-wine focus:shadow-md dark:bg-silver dark:focus:border-sheen-gold"
             {...register("email", { required: true })}
           />
         </div>
         <div className="mb-5">
           <label
             htmlFor="message"
-            className="mb-3 block text-base text-raisin-black dark:text-sheen-gold"
+            className="mb-3 block text-lg text-raisin-black dark:text-sheen-gold"
           >
             Message
           </label>
           <textarea
             rows={4}
             placeholder="Type your message"
-            className="placeholder:text-ls w-full resize-none rounded-md border border-transparent bg-raisin-black bg-opacity-20 px-6 py-3 text-base text-gray-700 outline-none placeholder:text-taupe-gray focus:border-wine focus:shadow-md dark:bg-silver dark:focus:border-sheen-gold"
+            className="w-full resize-none rounded-md border border-transparent bg-raisin-black bg-opacity-20 px-6 py-3 text-lg text-raisin-black outline-none placeholder:text-lg placeholder:text-taupe-gray focus:border-wine focus:shadow-md dark:bg-silver dark:focus:border-sheen-gold"
             {...register("message", { required: true })}
           ></textarea>
         </div>
         <div className="text-center">
-          <button className="hover:shadow-form dark:hover:bg-sheen-gold-500 mt-10 rounded-md bg-wine px-8 pb-3 pt-1 text-base font-semibold text-silver outline-none hover:bg-wine-800 dark:bg-sheen-gold dark:text-raisin-black">
+          <button className="hover:shadow-form dark:hover:bg-sheen-gold-500 mt-10 rounded-md bg-wine px-8 pb-3 pt-1 text-lg font-semibold text-silver outline-none hover:bg-wine-700 dark:bg-sheen-gold dark:text-raisin-black">
             Submit
           </button>
         </div>
