@@ -19,7 +19,7 @@ function Modal() {
               <Link href={pathname}>
                 <button
                   type="button"
-                  className="dark:hover:bg-sheen-gold-500 rounded-md bg-wine px-10 pb-2 pt-0 text-raisin-black hover:bg-wine-700 dark:bg-sheen-gold "
+                  className="rounded-md bg-wine px-10 pb-2 pt-0 text-raisin-black hover:bg-wine-700 dark:bg-sheen-gold dark:hover:bg-sheen-gold-500 "
                 >
                   Close
                 </button>
