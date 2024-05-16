@@ -80,7 +80,7 @@ const HeroImg = () => {
         <Socials ref={socialsRef} />
         <div
           ref={astronautRef}
-          className="absolute left-4 top-4 text-6xl text-silver dark:text-raisin-black"
+          className="absolute left-4 top-4 text-6xl text-silver opacity-0 dark:text-raisin-black"
         >
           <FaUserAstronaut />
         </div>
