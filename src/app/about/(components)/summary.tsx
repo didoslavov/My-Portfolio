@@ -2,7 +2,7 @@ import React from "react";
 
 const Sumamry = () => {
   return (
-    <div className="flex flex-col gap-4 text-base text-raisin-black dark:text-silver md:text-xl">
+    <div className="flex flex-col gap-4 text-justify indent-3 text-base text-raisin-black dark:text-silver md:inset-0 md:text-start md:text-xl">
       <p>
         Hi! I&apos;m Deyan Slavov -{" "}
         <span className="text-wine dark:text-sheen-gold">Dido</span>. At the end
