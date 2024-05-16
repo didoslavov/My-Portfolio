@@ -6,7 +6,7 @@ export const animateListSlider = (contentRef: RefObject<HTMLDivElement>) => {
     slides: document.querySelectorAll(".slide"),
     list: document.querySelector(".slides"),
     duration: 6,
-    lineHeight: 50,
+    lineHeight: 40,
   };
 
   const vSlide = gsap.timeline({
