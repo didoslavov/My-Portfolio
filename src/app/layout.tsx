@@ -5,6 +5,7 @@ import Header from "../components/layout/header/header";
 import Canvas from "../components/ui/shooting-stars/canvas";
 import Providers from "./providers";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const concertOne = Concert_One({ weight: "400", subsets: ["latin"] });
 
@@ -29,6 +30,7 @@ export default function RootLayout({
           <main>{children}</main>
         </Providers>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
