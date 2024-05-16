@@ -86,7 +86,11 @@ const Canvas = () => {
       className="pointer-events-none fixed right-0 top-0 z-0 hidden h-screen w-screen xl:block"
       ref={containerRef}
     >
-      <Stage width={canvasDimensions.width} height={canvasDimensions.height}>
+      <Stage
+        width={canvasDimensions.width}
+        height={canvasDimensions.height}
+        options={{ backgroundAlpha: 0 }}
+      >
         {staticStarsSmall}
         {staticStarsBig}
         {fallingStars}
