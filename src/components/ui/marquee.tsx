@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { horizontalLoop } from "@/utils/horizontalAnimation";
+import { horizontalLoop } from "@/utils/animations/animateMarquee";
 import Image, { StaticImageData } from "next/image";
 
 interface MarqueeProps {

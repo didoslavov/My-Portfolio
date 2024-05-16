@@ -5,11 +5,13 @@ const Sumamry = () => {
     <div className="flex flex-col gap-4 text-justify indent-3 text-base text-raisin-black dark:text-silver md:inset-0 md:text-start md:text-xl">
       <p>
         Hi! I&apos;m Deyan Slavov -{" "}
-        <span className="text-wine dark:text-sheen-gold">Dido</span>. At the end
-        of 2022, I decided to make a big change and switch my career to
-        something I&apos;ve always loved - programming. I&apos;ve always been
-        fascinated by technology, but it took me a while to gather the courage
-        to try it myself.
+        <span className="font-concert text-wine dark:text-sheen-gold">
+          Dido
+        </span>
+        . At the end of 2022, I decided to make a big change and switch my
+        career to something I&apos;ve always loved - programming. I&apos;ve
+        always been fascinated by technology, but it took me a while to gather
+        the courage to try it myself.
       </p>
       <p>
         In addition to my career shift, I have also experienced other positive
@@ -29,7 +31,7 @@ const Sumamry = () => {
         As I continue to grow as a developer, I&apos;m excited to bring my
         unique perspective, dedication, and enthusiasm to every project I start.
         Resonating with Terry Pratchett&apos;s words from Discworld -{" "}
-        <span className="text-wine dark:text-sheen-gold">
+        <span className="font-concert text-wine dark:text-sheen-gold">
           &ldquo;So much universe, and so little time.&rdquo;
         </span>
         - I&apos;m reminded of the boundless opportunities within the JavaScript

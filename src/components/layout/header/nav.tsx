@@ -7,7 +7,7 @@ const Nav = () => {
     <nav
       className={`hidden w-full items-center md:flex md:justify-end lg:flex lg:justify-end`}
     >
-      <ul className="flex items-center justify-around gap-4 text-xl uppercase text-raisin-black dark:text-silver lg:justify-end">
+      <ul className="font-concert flex items-center justify-around gap-4 text-xl uppercase text-raisin-black dark:text-silver lg:justify-end">
         {links.map((link) => (
           <li
             key={link.id}

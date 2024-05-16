@@ -14,6 +14,9 @@ const config: Config = {
   darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        concert: ["var(--font-concert)"],
+      },
       colors: {
         "sheen-gold": {
           DEFAULT: "#CAA45D",

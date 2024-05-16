@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Concert_One } from "next/font/google";
+import { Lato, Concert_One } from "next/font/google";
 import "./globals.css";
 import Header from "../components/layout/header/header";
 import Canvas from "../components/ui/shooting-stars/canvas";
@@ -10,7 +10,16 @@ import Modal from "@/components/ui/modal";
 import { Suspense } from "react";
 import Loading from "@/components/ui/loading";
 
-const concertOne = Concert_One({ weight: "400", subsets: ["latin"] });
+const lato = Lato({
+  weight: ["100", "300", "400", "700", "900"],
+  subsets: ["latin"],
+});
+
+const concert = Concert_One({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-concert",
+});
 
 export const metadata: Metadata = {
   title: "Dido | Portfolio",
@@ -25,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${concertOne.className} bg-silver-100 dark:bg-raisin-black`}
+        className={`${concert.variable} ${lato.className} bg-silver-100 dark:bg-raisin-black`}
       >
         <Providers>
           <Header />

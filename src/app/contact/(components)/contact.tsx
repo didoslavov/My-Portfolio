@@ -4,7 +4,10 @@ import { useForm } from "react-hook-form";
 import { sendEmail } from "@/lib/send-email";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { animateEnterPage, animateListSlider } from "@/utils/animatePage";
+import {
+  animateEnterPage,
+  animateListSlider,
+} from "@/utils/animations/animatePage";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -35,7 +38,7 @@ const Contact = () => {
       ref={contentRef}
       className="flex flex-col items-center justify-center gap-10 md:gap-20"
     >
-      <div className="mt-10 text-center text-lg text-raisin-black dark:text-silver sm:text-xl  md:text-4xl">
+      <div className="font-concert mt-10 text-center text-lg text-raisin-black dark:text-silver sm:text-xl  md:text-4xl">
         <h2 className="mb-4">
           Send me an email and I&apos;ll reach out to you.
         </h2>
@@ -111,7 +114,7 @@ const Contact = () => {
           ></textarea>
         </div>
         <div className="text-center">
-          <button className="hover:shadow-form rounded-md bg-wine px-8 pb-3 pt-1 text-lg font-semibold text-silver outline-none hover:bg-wine-700 dark:bg-sheen-gold dark:text-raisin-black dark:hover:bg-sheen-gold-500 md:mt-10">
+          <button className="hover:shadow-form rounded-md bg-wine px-8 py-3 text-lg font-semibold text-silver outline-none hover:bg-wine-700 dark:bg-sheen-gold dark:text-raisin-black dark:hover:bg-sheen-gold-500 md:mt-10">
             Submit
           </button>
         </div>

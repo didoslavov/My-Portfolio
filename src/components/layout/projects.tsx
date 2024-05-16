@@ -4,7 +4,7 @@ import { BentoGrid, BentoGridItem } from "./bento-grid";
 import { Project } from "@/types/projects";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { animateEnterPage } from "@/utils/animatePage";
+import { animateEnterPage } from "@/utils/animations/animatePage";
 
 export function BentoGridProjcts({ projects }: { projects: Project[] }) {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -15,7 +15,7 @@ export function BentoGridProjcts({ projects }: { projects: Project[] }) {
 
   return (
     <div ref={contentRef} className="w-full">
-      <div className="mb-16 w-full text-center text-raisin-black dark:text-silver">
+      <div className="font-concert mb-16 w-full  text-center text-raisin-black dark:text-silver">
         <h2 className="mb-4 text-center text-6xl">Projects</h2>
         <p className="text-center text-2xl text-wine dark:text-sheen-gold">
           Explore some of my latest work

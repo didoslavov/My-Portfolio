@@ -44,7 +44,7 @@ export const BentoGridItem = ({
               : 'before:bg-blue-700 before:content-["TS"]'
           } before before:z-50 before:-rotate-45 before:px-10 before:py-2 before:text-xl before:text-silver-100`}
         />
-        <h3 className="text-raisin-black-600 mb-2 mt-2 font-sans text-xl font-black dark:text-silver">
+        <h3 className="text-raisin-black-600 mb-2 mt-2 text-2xl font-black dark:text-silver">
           <div className="flex justify-between capitalize">
             {project.name.split("-").join(" ")}
             <span className="flex items-center gap-1 text-lg font-bold">
@@ -53,7 +53,7 @@ export const BentoGridItem = ({
             </span>
           </div>
         </h3>
-        <p className="font-sans text-lg font-medium text-raisin-black dark:text-silver">
+        <p className="text-lg font-semibold text-raisin-black dark:text-silver">
           {project.description}
         </p>
       </Link>
