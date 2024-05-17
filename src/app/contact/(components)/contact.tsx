@@ -19,7 +19,12 @@ export type FormData = {
 
 const Contact = () => {
   const router = useRouter();
-  const { register, handleSubmit, reset } = useForm<FormData>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<FormData>();
   const contentRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
