@@ -20,6 +20,8 @@ import mongo from "/public/technologies/mongo.svg";
 import mysql from "/public/technologies/mysql.svg";
 import sequelize from "/public/technologies/sequelize.svg";
 import prisma from "/public/technologies/prisma.svg";
+import graphql from "/public/technologies/graphql.svg";
+import hasura from "/public/technologies/hasura.svg";
 
 export const logos = [
   {
@@ -131,5 +133,15 @@ export const logos = [
     id: 22,
     src: prisma,
     alt: "Prisma logo",
+  },
+  {
+    id: 23,
+    src: hasura,
+    alt: "Hasura logo",
+  },
+  {
+    id: 24,
+    src: graphql,
+    alt: "GraphQL logo",
   },
 ];
