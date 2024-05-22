@@ -1,6 +1,6 @@
-import { FormData } from "@/app/contact/(components)/contact";
+import { ContactFormData } from "@/app/contact/(components)/contact";
 
-export function sendEmail(data: FormData) {
+export function sendEmail(data: ContactFormData) {
   const apiEndpoint = "/api/email";
 
   fetch(apiEndpoint, {

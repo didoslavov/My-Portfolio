@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { horizontalLoop } from "@/utils/animations/animateMarquee";
 import Image, { StaticImageData } from "next/image";
+import { cn } from "@/utils/cn";
 
 interface MarqueeProps {
   items: { id: number; src: StaticImageData; alt: string }[];
@@ -45,7 +46,7 @@ const Marquee = ({ items, className, reversed }: MarqueeProps) => {
       ref={marqueeRef}
     >
       {items.map((item, i) => (
-        <div key={item.id} className={`box mr-2 ${className}`}>
+        <div key={item.id} className={`${cn("box mr-2", className)}`}>
           <Image src={item.src} alt={item.alt} className="w-full" />
         </div>
       ))}
