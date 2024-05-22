@@ -1,6 +1,6 @@
 "use client";
 
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { sendEmail } from "@/lib/send-email";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
@@ -12,8 +12,13 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import Form from "@/components/ui/form";
+import Input from "@/components/ui/input";
+import FormError from "@/components/ui/form-error";
+import TextArea from "@/components/ui/text-area";
+import Button from "@/components/ui/button";
 
-const schema = z.object({
+export const contactFormSchema = z.object({
   name: z
     .string()
     .min(3, { message: "Name must be at least 3 characters long" }),
@@ -23,7 +28,7 @@ const schema = z.object({
     .min(10, { message: "Message must be at least 10 characters long" }),
 });
 
-export type FormData = z.infer<typeof schema>;
+export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const Contact = () => {
   const router = useRouter();
@@ -32,7 +37,10 @@ const Contact = () => {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<FormData>({ resolver: zodResolver(schema), mode: "onChange" });
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactFormSchema),
+    mode: "onChange",
+  });
   const contentRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
@@ -40,18 +48,18 @@ const Contact = () => {
     animateEnterPage(contentRef);
   });
 
-  function onSubmit(formData: z.infer<typeof schema>) {
+  const onSubmit: SubmitHandler<ContactFormData> = (formData) => {
     sendEmail(formData);
     router.push("/contact?modal=true");
     reset();
-  }
+  };
 
   return (
     <div
       ref={contentRef}
       className="flex flex-col items-center justify-center gap-10 md:gap-20"
     >
-      <div className="font-concert mt-10 text-center text-lg text-raisin-black dark:text-silver sm:text-xl  md:text-4xl">
+      <div className="mt-10 text-center font-concert text-lg text-raisin-black dark:text-silver sm:text-xl  md:text-4xl">
         <h2 className="mb-4">
           Send me an email and I&apos;ll reach out to you.
         </h2>
@@ -80,10 +88,21 @@ const Contact = () => {
           >
             GitHub
           </Link>{" "}
-          too.
+          or leave a message in the{" "}
+          <Link
+            href="/guest-book"
+            className="transition-all duration-500 ease-in-out hover:text-wine dark:hover:text-sheen-gold"
+          >
+            guest book
+          </Link>
+          .
         </h3>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} className="z-50 w-4/5 lg:w-1/4">
+      <Form
+        onSubmit={onSubmit}
+        handleSubmit={handleSubmit}
+        className="z-50 w-4/5 lg:w-1/4"
+      >
         <div className="mb-5">
           <label
             htmlFor="name"
@@ -91,17 +110,14 @@ const Contact = () => {
           >
             Full Name
           </label>
-          <input
+          <Input
+            name="name"
             type="text"
             placeholder="John Doe"
-            className={`w-full rounded-md border border-transparent bg-raisin-black bg-opacity-20 px-6 pb-3 pt-2 text-base text-raisin-black outline-none placeholder:text-lg placeholder:text-taupe-gray focus:border-raisin-black focus:shadow-md dark:bg-silver dark:focus:border-sheen-gold ${errors.name && "border-wine"}`}
-            {...register("name", { required: true })}
+            register={register}
+            errors={errors}
           />
-          {errors.name && (
-            <p className="font-concert text-sm text-wine">
-              {errors.name.message}
-            </p>
-          )}
+          {errors.name && <FormError field="name" errors={errors} />}
         </div>
         <div className="mb-5">
           <label
@@ -110,17 +126,14 @@ const Contact = () => {
           >
             Email Address
           </label>
-          <input
+          <Input
+            name="email"
             type="email"
             placeholder="example@domain.com"
-            className={`w-full rounded-md border border-transparent bg-raisin-black bg-opacity-20 px-6 pb-3 pt-2 text-lg text-raisin-black  outline-none placeholder:text-lg placeholder:text-taupe-gray focus:border-raisin-black focus:shadow-md dark:bg-silver dark:focus:border-sheen-gold ${errors.email && "border-wine"}`}
-            {...register("email", { required: true })}
+            register={register}
+            errors={errors}
           />
-          {errors.email && (
-            <p className="font-concert text-sm text-wine">
-              {errors.email.message}
-            </p>
-          )}
+          {errors.email && <FormError field="email" errors={errors} />}
         </div>
         <div className="mb-5">
           <label
@@ -129,24 +142,19 @@ const Contact = () => {
           >
             Message
           </label>
-          <textarea
+          <TextArea
+            name="message"
             rows={4}
             placeholder="Type your message"
-            className={`w-full resize-none rounded-md border border-transparent bg-raisin-black bg-opacity-20 px-6 pb-3 pt-2 text-lg text-raisin-black outline-none placeholder:text-lg placeholder:text-taupe-gray focus:border-raisin-black focus:shadow-md dark:bg-silver dark:focus:border-sheen-gold ${errors.message && "border-wine"}`}
-            {...register("message", { required: true })}
-          ></textarea>
-          {errors.message && (
-            <p className="font-concert text-sm text-wine">
-              {errors.message.message}
-            </p>
-          )}
+            register={register}
+            errors={errors}
+          ></TextArea>
+          {errors.message && <FormError field="message" errors={errors} />}
         </div>
         <div className="text-center">
-          <button className="hover:shadow-form rounded-md bg-wine px-8 py-3 text-lg font-semibold text-silver outline-none hover:bg-wine-700 dark:bg-sheen-gold dark:text-raisin-black dark:hover:bg-sheen-gold-500 md:mt-10">
-            Submit
-          </button>
+          <Button type="submit">Send</Button>
         </div>
-      </form>
+      </Form>
     </div>
   );
 };
