@@ -7,12 +7,12 @@ import {
   NextSSRApolloClient,
   SSRMultipartLink,
 } from "@apollo/experimental-nextjs-app-support/ssr";
-import React from "react";
+import React, { PropsWithChildren } from "react";
 
-const uri = process.env.NEXT_PUBLIC_HASURA_PROJECT_ENDPOINT || "";
-const hasuraAdminSecret = process.env.HASURA_ADMIN_SECRET || "";
+// const uri = process.env.NEXT_PUBLIC_HASURA_PROJECT_ENDPOINT || "";
+// const hasuraAdminSecret = process.env.HASURA_ADMIN_SECRET || "";
 
-function makeClient() {
+function makeClient(uri: string, hasuraAdminSecret: string) {
   const httpLink = new HttpLink({
     uri,
     fetchOptions: { cache: "no-store" },
@@ -35,9 +35,18 @@ function makeClient() {
   });
 }
 
-export function ApolloWrapper({ children }: React.PropsWithChildren) {
+export function ApolloWrapper({
+  children,
+  credentials,
+}: PropsWithChildren & {
+  credentials: { uri: string; hasuraAdminSecret: string };
+}) {
   return (
-    <ApolloNextAppProvider makeClient={makeClient}>
+    <ApolloNextAppProvider
+      makeClient={() =>
+        makeClient(credentials.uri, credentials.hasuraAdminSecret)
+      }
+    >
       {children}
     </ApolloNextAppProvider>
   );
