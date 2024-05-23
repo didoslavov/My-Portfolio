@@ -9,7 +9,7 @@ import {
 } from "@apollo/experimental-nextjs-app-support/ssr";
 import React from "react";
 
-const uri = process.env.HASURA_PROJECT_ENDPOINT || "";
+const uri = process.env.NEXT_PUBLIC_HASURA_PROJECT_ENDPOINT || "";
 const hasuraAdminSecret = process.env.HASURA_ADMIN_SECRET || "";
 
 function makeClient() {
