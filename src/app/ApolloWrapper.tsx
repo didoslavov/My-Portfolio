@@ -1,3 +1,5 @@
+// src/components/ApolloWrapper.tsx
+
 "use client";
 
 import { ApolloLink, HttpLink } from "@apollo/client";
@@ -7,10 +9,15 @@ import {
   NextSSRApolloClient,
   SSRMultipartLink,
 } from "@apollo/experimental-nextjs-app-support/ssr";
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 
-// const uri = process.env.NEXT_PUBLIC_HASURA_PROJECT_ENDPOINT || "";
-// const hasuraAdminSecret = process.env.HASURA_ADMIN_SECRET || "";
+async function fetchApolloConfig() {
+  const response = await fetch("/api/hasura");
+  if (!response.ok) {
+    throw new Error("Failed to fetch Apollo config");
+  }
+  return response.json();
+}
 
 function makeClient(uri: string, hasuraAdminSecret: string) {
   const httpLink = new HttpLink({
@@ -35,17 +42,25 @@ function makeClient(uri: string, hasuraAdminSecret: string) {
   });
 }
 
-export function ApolloWrapper({
-  children,
-  credentials,
-}: PropsWithChildren & {
-  credentials: { uri: string; hasuraAdminSecret: string };
-}) {
+export function ApolloWrapper({ children }: PropsWithChildren) {
+  const [config, setConfig] = useState<{
+    uri: string;
+    hasuraAdminSecret: string;
+  } | null>(null);
+
+  useEffect(() => {
+    fetchApolloConfig()
+      .then((data) => setConfig(data))
+      .catch((error) => console.error(error));
+  }, []);
+
+  if (!config) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <ApolloNextAppProvider
-      makeClient={() =>
-        makeClient(credentials.uri, credentials.hasuraAdminSecret)
-      }
+      makeClient={() => makeClient(config.uri, config.hasuraAdminSecret)}
     >
       {children}
     </ApolloNextAppProvider>

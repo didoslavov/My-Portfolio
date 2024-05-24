@@ -40,7 +40,7 @@ export default function RootLayout({
       <body
         className={`${concert.variable} ${lato.className} bg-silver-100 dark:bg-raisin-black`}
       >
-        <ApolloWrapper credentials={{ uri, hasuraAdminSecret }}>
+        <ApolloWrapper>
           <Providers>
             <Header />
             <Canvas />
