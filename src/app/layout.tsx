@@ -27,14 +27,14 @@ export const metadata: Metadata = {
   description: "Dido Slavov's portfolio",
 };
 
-const uri = process.env.NEXT_PUBLIC_HASURA_PROJECT_ENDPOINT || "";
-const hasuraAdminSecret = process.env.HASURA_ADMIN_SECRET || "";
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const uri = process.env.NEXT_PUBLIC_HASURA_PROJECT_ENDPOINT || "";
+  const hasuraAdminSecret = process.env.HASURA_ADMIN_SECRET || "";
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body

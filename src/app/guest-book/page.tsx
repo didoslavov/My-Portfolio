@@ -1,5 +1,5 @@
-import GuestBook from "@/components/layout/guest-book";
 import React from "react";
+import GuestBook from "./(components)/guest-book";
 
 const page = () => {
   return <GuestBook />;
