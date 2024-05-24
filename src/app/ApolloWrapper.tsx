@@ -9,7 +9,7 @@ import {
 } from "@apollo/experimental-nextjs-app-support/ssr";
 import React, { PropsWithChildren } from "react";
 
-const uri = "/api/hasura";
+const uri = process.env.NEXT_PUBLIC_HASURA_API_URL + "/api/hasura";
 
 function makeClient() {
   const httpLink = new HttpLink({
