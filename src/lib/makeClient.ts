@@ -1,3 +1,5 @@
+"use server";
+
 import { ApolloLink, HttpLink } from "@apollo/client";
 import {
   NextSSRInMemoryCache,
