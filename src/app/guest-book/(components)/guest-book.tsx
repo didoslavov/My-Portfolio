@@ -1,17 +1,12 @@
 "use client";
 
 import Message from "@/app/guest-book/(components)/message";
-import { GET_GUESTBOOK_ENTRIES, GuestBookEntry } from "@/graphql/queries";
-import { useSuspenseQuery } from "@apollo/client";
+import { GuestBookEntry } from "@/graphql/queries";
 
-function GuestBook() {
-  const { data, error } = useSuspenseQuery<{
-    guest_book: GuestBookEntry[];
-  }>(GET_GUESTBOOK_ENTRIES);
-
-  if (error) {
-    console.error(error);
-  }
+function GuestBook({ data }: { data: { guest_book: GuestBookEntry[] } }) {
+  // const { data, error } = useSuspenseQuery<{
+  //   guest_book: GuestBookEntry[];
+  // }>(GET_GUESTBOOK_ENTRIES);
 
   return (
     <section className="mx-auto flex max-w-[1440px] items-center justify-center">

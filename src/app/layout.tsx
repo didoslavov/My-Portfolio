@@ -9,7 +9,6 @@ import { Analytics } from "@vercel/analytics/react";
 import Modal from "@/components/ui/modal";
 import { Suspense } from "react";
 import Loading from "@/components/ui/loading";
-import { ApolloWrapper } from "./ApolloWrapper";
 
 const lato = Lato({
   weight: ["100", "300", "400", "700", "900"],
@@ -32,26 +31,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const uri = process.env.NEXT_PUBLIC_HASURA_PROJECT_ENDPOINT || "";
-  const hasuraAdminSecret = process.env.HASURA_ADMIN_SECRET || "";
-
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${concert.variable} ${lato.className} bg-silver-100 dark:bg-raisin-black`}
       >
-        <ApolloWrapper>
-          <Providers>
-            <Header />
-            <Canvas />
-            <main>{children}</main>
-          </Providers>
-          <Suspense fallback={<Loading />}>
-            <Modal />
-          </Suspense>
-          <SpeedInsights />
-          <Analytics />
-        </ApolloWrapper>
+        <Providers>
+          <Header />
+          <Canvas />
+          <main>{children}</main>
+        </Providers>
+        <Suspense fallback={<Loading />}>
+          <Modal />
+        </Suspense>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
