@@ -12,6 +12,7 @@ import hasuragraphql from "/public/certificates/graphql-hasura.jpg";
 import reacttypescript from "/public/certificates/react-typescript-the-practicle-guide.jpg";
 import htmlcss from "/public/certificates/htmlcss.png";
 import htmlsass from "/public/certificates/htmlsass.png";
+import advancedreact from "/public/certificates/advanced-react-storybook.jpg";
 import ts from "/public/certificates/ts.png";
 import reactts from "/public/certificates/reactts.png";
 import zod from "/public/certificates/zod.png";
@@ -29,6 +30,7 @@ export const certificates = [
   { id: 1, src: diploma, alt: "Certificate image" },
   { id: 17, src: hasuragraphql, alt: "Certificate image" },
   { id: 18, src: reacttypescript, alt: "Certificate image" },
+  { id: 19, src: advancedreact, alt: "Certificate image" },
   { id: 11, src: htmlcss, alt: "Certificate image" },
   { id: 12, src: htmlsass, alt: "Certificate image" },
   { id: 13, src: ts, alt: "Certificate image" },
