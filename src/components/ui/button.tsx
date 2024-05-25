@@ -7,7 +7,7 @@ const Button = ({ children, className }: ButtonProps) => {
   return (
     <button
       className={cn(
-        "hover:shadow-form rounded-md bg-wine font-semibold text-silver outline-none hover:bg-wine-700 dark:bg-sheen-gold dark:text-raisin-black dark:hover:bg-sheen-gold-500",
+        "hover:shadow-form rounded-md bg-wine font-semibold text-silver outline-none transition-colors duration-300 hover:bg-wine-700 dark:bg-sheen-gold dark:text-raisin-black dark:hover:bg-sheen-gold-500",
         className,
       )}
     >

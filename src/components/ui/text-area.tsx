@@ -21,8 +21,8 @@ const TextArea = <T extends FieldValues>({
       rows={rows}
       placeholder={placeholder}
       className={cn(
-        "dark:focus:border-sheen-goldclassName w-full resize-none rounded-md border border-transparent bg-raisin-black bg-opacity-20 text-raisin-black outline-none placeholder:text-taupe-gray focus:border-raisin-black focus:shadow-md dark:bg-silver",
-        errors[name] && "border-wine",
+        "w-full resize-none rounded-md border border-transparent bg-raisin-black bg-opacity-20 text-base text-raisin-black outline-none placeholder:text-taupe-gray focus:border-raisin-black focus:shadow-md dark:bg-silver dark:focus:border-sheen-gold",
+        errors[name] && "outline-wine focus:border-none dark:outline-wine",
         className,
       )}
       {...register(name as Path<T>, { required: true })}

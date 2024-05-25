@@ -19,7 +19,7 @@ const Input = <T extends FieldValues>({
     <input
       type={type}
       placeholder="John Doe"
-      className={`${cn("w-full rounded-md border border-transparent bg-raisin-black bg-opacity-20 px-6 pb-3 pt-2 text-base text-raisin-black outline-none placeholder:text-taupe-gray focus:border-raisin-black focus:shadow-md dark:bg-silver dark:focus:border-sheen-gold", className, errors.name && "border-wine")}`}
+      className={`${cn("w-full rounded-md border border-transparent bg-raisin-black bg-opacity-20 px-6 pb-3 pt-2 text-base text-raisin-black outline-none placeholder:text-taupe-gray focus:border-raisin-black focus:shadow-md dark:bg-silver dark:focus:border-sheen-gold", className, errors[name] && "outline-wine focus:border-none dark:outline-wine")}`}
       {...register(name as Path<T>, { required: true })}
     />
   );
