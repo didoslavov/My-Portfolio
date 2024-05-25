@@ -1,12 +1,12 @@
 "use server";
 
 import {
-  ADD_GUESTBOOK_ENTRY,
   GET_GUESTBOOK_ENTRIES,
   GuestBookEntry,
 } from "@/graphql/queries";
 import { getClient } from "../client";
 import { revalidatePath } from "next/cache";
+import { ADD_GUESTBOOK_ENTRY } from "@/graphql/mutations";
 
 export async function getMessages() {
   const { data, errors } = await getClient().query<{

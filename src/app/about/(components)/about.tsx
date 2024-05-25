@@ -9,7 +9,7 @@ import { useGSAP } from "@gsap/react";
 import {
   animateEnterPage,
   animateListSlider,
-} from "@/utils/animations/animatePage";
+} from "@/utils/animations/animate-page";
 
 const About = () => {
   const contentRef = useRef<HTMLDivElement>(null);

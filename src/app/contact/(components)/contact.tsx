@@ -7,7 +7,7 @@ import { useGSAP } from "@gsap/react";
 import {
   animateEnterPage,
   animateListSlider,
-} from "@/utils/animations/animatePage";
+} from "@/utils/animations/animate-page";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { z } from "zod";

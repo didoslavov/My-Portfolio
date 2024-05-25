@@ -6,7 +6,7 @@ import HeroImg from "../ui/hero-img";
 import {
   animateEnterPage,
   animateListSlider,
-} from "@/utils/animations/animatePage";
+} from "@/utils/animations/animate-page";
 
 const Home = () => {
   const stack = ["Vanilla JS", "TS", "React", "Next", "Node JS", "Express"];

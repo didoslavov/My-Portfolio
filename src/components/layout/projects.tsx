@@ -4,7 +4,7 @@ import { BentoGrid, BentoGridItem } from "./bento-grid";
 import { Project } from "@/types/projects";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
-import { animateEnterPage } from "@/utils/animations/animatePage";
+import { animateEnterPage } from "@/utils/animations/animate-page";
 
 export function BentoGridProjcts({ projects }: { projects: Project[] }) {
   const contentRef = useRef<HTMLDivElement>(null);

@@ -2,7 +2,7 @@ import { useGSAP } from "@gsap/react";
 import MobileButton from "./mobile-button";
 import Link from "next/link";
 import { links } from "@/constans/navigation-links";
-import { animateMobileMenu } from "@/utils/animations/animateMobileMenu";
+import { animateMobileMenu } from "@/utils/animations/animate-mobileMenu";
 import { useState } from "react";
 
 const MobileNavMenu = ({

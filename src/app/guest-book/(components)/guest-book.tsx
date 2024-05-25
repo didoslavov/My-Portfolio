@@ -11,7 +11,7 @@ import { addMessage } from "@/lib/actions/hasura-messages";
 import {
   animateEnterPage,
   animateListSlider,
-} from "@/utils/animations/animatePage";
+} from "@/utils/animations/animate-page";
 import { useGSAP } from "@gsap/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRef } from "react";
@@ -69,7 +69,7 @@ function GuestBook({
         Leave me a message
       </h2>
       <p className="mb-10 text-center text-lg font-bold text-wine dark:text-sheen-gold sm:text-xl">
-        It could be a question, a suggestion, or a joke. I love dad jokes too!
+        It could be anything. A question, a suggestion, a joke. I love dad jokes too!
       </p>
       <Form
         handleSubmit={handleSubmit}
@@ -134,8 +134,8 @@ function GuestBook({
           ))}
         </ul>
       ) : (
-        <div className="flex items-end gap-4">
-          <p className="mt-20 font-concert text-xl font-bold text-raisin-black dark:text-silver">
+        <div className="flex md:flex-row items-center flex-col md:items-end gap-4">
+          <p className="mt-20 font-concert text-raisin-black dark:text-silver text-center text-lg font-bold sm:text-xl">
             Share this milestone with me! Be the first one leaving a message!{" "}
           </p>
           <GiDiamondsSmile className="text-3xl text-wine dark:text-sheen-gold" />
