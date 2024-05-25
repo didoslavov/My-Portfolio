@@ -128,7 +128,6 @@ const Contact = () => {
           </label>
           <Input
             name="email"
-            type="email"
             placeholder="example@domain.com"
             register={register}
             errors={errors}
