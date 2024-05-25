@@ -1,15 +1,17 @@
-import { type ContactFormData } from "@/app/contact/(components)/contact";
-import { type FieldErrors } from "react-hook-form";
+import { FieldValues, FieldErrors } from "react-hook-form";
 
-type FormErrorProps = {
-  errors: FieldErrors<ContactFormData>;
-  field: keyof ContactFormData;
+type FormErrorProps<T extends FieldValues> = {
+  errors: FieldErrors<T>;
+  field: keyof T;
 };
 
-const FormError = ({ errors, field }: FormErrorProps) => {
+const FormError = <T extends FieldValues>({
+  errors,
+  field,
+}: FormErrorProps<T>) => {
   return (
-    <p className="font-concert text-sm text-wine">
-      {errors && errors[field]?.message}
+    <p className="dark:text-wine-100 font-concert text-sm text-wine">
+      {errors[field]!.message as string}
     </p>
   );
 };
