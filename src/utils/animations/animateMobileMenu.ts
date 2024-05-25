@@ -1,4 +1,3 @@
-import { Tween } from "framer-motion";
 import gsap from "gsap";
 
 let listItemTween: gsap.core.Tween;
