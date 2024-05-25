@@ -1,18 +1,12 @@
-import React from "react";
 import GuestBook from "./(components)/guest-book";
-import { GET_GUESTBOOK_ENTRIES } from "@/graphql/queries";
-import { getClient } from "@/lib/client";
-
-async function getData() {
-  const { data, error, errors } = await getClient().query({
-    query: GET_GUESTBOOK_ENTRIES,
-  });
-
-  return { data, error, errors };
-}
+import { getData } from "@/lib/actions/get-messages";
 
 const page = async () => {
-  const { data, error, errors } = await getData();
+  const { data, errors } = await getData();
+
+  if (errors) {
+    console.error(errors);
+  }
 
   return <GuestBook data={data} />;
 };
