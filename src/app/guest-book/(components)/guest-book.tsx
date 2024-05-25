@@ -17,6 +17,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useRef } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
+import { GiDiamondsSmile } from "react-icons/gi";
 
 export const messageFormSchema = z.object({
   user: z
@@ -62,17 +63,20 @@ function GuestBook({
   return (
     <section
       ref={contentRef}
-      className="mx-auto mb-10 flex max-w-[1440px] flex-col items-center justify-center"
+      className="mx-2 mb-10 flex max-w-[1440px] flex-col items-center justify-center md:mx-auto"
     >
-      <h2 className="mb-14 font-concert text-5xl text-raisin-black dark:text-silver">
+      <h2 className="mb-4 font-concert text-4xl text-raisin-black dark:text-silver sm:text-5xl">
         Leave me a message
       </h2>
+      <p className="mb-10 text-center text-lg font-bold text-wine dark:text-sheen-gold sm:text-xl">
+        It could be a question, a suggestion, or a joke. I love dad jokes too!
+      </p>
       <Form
         handleSubmit={handleSubmit}
         onSubmit={onSubmit}
-        className="mb-10 flex w-2/3 items-start gap-2"
+        className="mb-10 flex w-full flex-col items-start gap-2 sm:w-5/6 md:w-2/3 md:flex-row"
       >
-        <div className="w-1/4">
+        <div className="w-full md:w-1/4">
           <label
             htmlFor="user"
             className="mb-3 block text-lg text-raisin-black dark:text-sheen-gold"
@@ -86,7 +90,7 @@ function GuestBook({
             type="text"
             placeholder="Your name"
             required
-            className="max-w-1/2 rounded-md p-1"
+            className="md:max-w-1/2 rounded-md p-1"
           />
           {errors.user && <FormError field="user" errors={errors} />}
         </div>
@@ -108,23 +112,35 @@ function GuestBook({
           />
           {errors.message && <FormError field="message" errors={errors} />}
         </div>
-        <div className="flex h-[114px] flex-col justify-center">
-          <Button type="submit" className="px-4 py-[5px] text-base">
+        <div className="mt-4 flex w-full flex-col items-center justify-center text-center md:mt-0 md:h-[114px] md:w-fit">
+          <Button
+            type="submit"
+            className="w-3/4 px-4 py-[5px] text-base md:w-full"
+          >
             Send
           </Button>
         </div>
       </Form>
-      <ul className="flex w-2/3 flex-col gap-6">
-        {data.guest_book.map((m) => (
-          <li key={m.id}>
-            <Message
-              user={m.user}
-              message={m.message}
-              created_at={m.created_at}
-            />
-          </li>
-        ))}
-      </ul>
+      {data.guest_book.length ? (
+        <ul className="flex w-full flex-col gap-6 sm:w-5/6 md:w-2/3">
+          {data.guest_book.map((m) => (
+            <li key={m.id}>
+              <Message
+                user={m.user}
+                message={m.message}
+                created_at={m.created_at}
+              />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <div className="flex items-end gap-4">
+          <p className="mt-20 font-concert text-xl font-bold text-raisin-black dark:text-silver">
+            Share this milestone with me! Be the first one leaving a message!{" "}
+          </p>
+          <GiDiamondsSmile className="text-3xl text-wine dark:text-sheen-gold" />
+        </div>
+      )}
     </section>
   );
 }
