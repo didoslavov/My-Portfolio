@@ -148,11 +148,14 @@ const Contact = () => {
             placeholder="Type your message"
             register={register}
             errors={errors}
+            className="px-6 pb-3 pt-2 text-lg placeholder:text-lg"
           ></TextArea>
           {errors.message && <FormError field="message" errors={errors} />}
         </div>
         <div className="text-center">
-          <Button type="submit">Send</Button>
+          <Button type="submit" className="px-8 py-3 text-lg md:mt-10">
+            Send
+          </Button>
         </div>
       </Form>
     </div>
