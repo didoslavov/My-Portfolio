@@ -32,14 +32,14 @@ const Message = ({ user, message, created_at }: Omit<GuestBookEntry, "id">) => {
             {message}
           </p>
         </div>
-        <div className="flex items-center gap-2 text-2xl md:text-3xl">
+        {/* <div className="flex items-center gap-2 text-2xl md:text-3xl">
           <button>
             <BiMessageSquareEdit />
           </button>
           <button>
             <AiOutlineDelete />
           </button>
-        </div>
+        </div> */}
       </div>
     </article>
   );
