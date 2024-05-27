@@ -3,7 +3,7 @@
 import Marquee from "@/components/ui/marquee";
 import React, { useRef } from "react";
 import Summary from "../(components)/summary";
-import { logos } from "@/constans/logos";
+import { technologies } from "@/constans/technologies";
 import { certificates } from "@/constans/certificates";
 import { useGSAP } from "@gsap/react";
 import {
@@ -31,7 +31,7 @@ const About = () => {
         <h3 className="mb-10 font-concert text-xl text-raisin-black dark:text-silver md:text-4xl lg:leading-[100px]">
           Technologies I&apos;m familiar with
         </h3>
-        <Marquee items={logos} className="min-w-16" reversed />
+        <Marquee items={technologies} className="min-w-16" reversed />
       </article>
       <article className="mb-10 flex flex-col items-center justify-between text-xl">
         <h3 className="mb-10 font-concert text-raisin-black dark:text-silver md:text-4xl lg:leading-[100px]">
