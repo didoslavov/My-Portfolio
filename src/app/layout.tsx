@@ -24,6 +24,16 @@ const concert = Concert_One({
 export const metadata: Metadata = {
   title: "Dido | Portfolio",
   description: "Dido Slavov's portfolio",
+  icons: {
+    icon: [
+      { url: "/favicon-bg-light.png", media: "(prefers-color-scheme: light)" },
+      new URL(
+        "/favicon-bg-ligth.png",
+        "https://didoslavov.net" || "http://localhost:3000",
+      ),
+      { url: "/favicon-bg-dark.png", media: "(prefers-color-scheme: dark)" },
+    ],
+  },
 };
 
 export default function RootLayout({
