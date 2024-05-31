@@ -40,7 +40,7 @@ const Home = () => {
               ))}
             </ul>
           </div>
-          <p className="font-concert mb-2">Developer</p>
+          <p className="mb-2 font-concert">Developer</p>
         </div>
       </div>
       <HeroImg />
