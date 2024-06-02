@@ -13,7 +13,7 @@ const StaticStar = ({
   starType: string;
 }) => {
   const staticStarsRef = useRef(null);
-  const star = "star.png";
+  const star = "star.avif";
 
   const leftPosition = Math.random() * screen.width;
   const topPosition = Math.random() * screen.height;

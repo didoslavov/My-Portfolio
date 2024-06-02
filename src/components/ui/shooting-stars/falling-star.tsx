@@ -11,7 +11,7 @@ const FallingStar = ({
   resolvedTheme: string | undefined;
 }) => {
   const fallingStarRef = useRef(null);
-  const star = "shootingstar.png";
+  const star = "shootingstar.avif";
 
   const leftPosition = Math.random() * screen.width;
   const starSize = Math.ceil(Math.random() * 1.5 + 5);

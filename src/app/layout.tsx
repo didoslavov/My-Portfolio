@@ -26,12 +26,12 @@ export const metadata: Metadata = {
   description: "Dido Slavov's portfolio",
   icons: {
     icon: [
-      { url: "/favicon-bg-light.png", media: "(prefers-color-scheme: light)" },
+      { url: "/favicon-bg-light.avif", media: "(prefers-color-scheme: light)" },
       new URL(
-        "/favicon-bg-ligth.png",
+        "/favicon-bg-ligth.avif",
         "https://didoslavov.net" || "http://localhost:3000",
       ),
-      { url: "/favicon-bg-dark.png", media: "(prefers-color-scheme: dark)" },
+      { url: "/favicon-bg-dark.avif", media: "(prefers-color-scheme: dark)" },
     ],
   },
 };

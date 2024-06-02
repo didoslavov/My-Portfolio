@@ -7,8 +7,8 @@ import Nav from "./nav";
 import MobileNavMenu from "./mobile/mobile-nav-menu";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import logoBgLight from "/public/logo-bg-light.png";
-import logoBgDark from "/public/logo-bg-dark.png";
+import logoBgLight from "/public/logo-bg-light.avif";
+import logoBgDark from "/public/logo-bg-dark.avif";
 import Link from "next/link";
 
 const Header = () => {

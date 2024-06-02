@@ -25,7 +25,7 @@ const MobileImage: React.FC<MobileImageProps> = ({ isMobileMenuOpen }) => {
       <Image
         width={500}
         height={500}
-        src="/portfolio-img-bg-light.jpg"
+        src="/portfolio-img-bg-light.avif"
         alt="Picture of me, Dido"
         className={`mobile-img hidden h-10 w-10 rounded-full drop-shadow-2xl dark:block md:dark:hidden ${
           isMobileMenuOpen ? "hidden" : "block"
@@ -34,7 +34,7 @@ const MobileImage: React.FC<MobileImageProps> = ({ isMobileMenuOpen }) => {
       <Image
         width={500}
         height={500}
-        src="/portfolio-img-bg-dark.jpg"
+        src="/portfolio-img-bg-dark.avif"
         alt="Picture of me, Dido"
         className={`mobile-img block h-10 w-10 rounded-full drop-shadow-2xl dark:hidden sm:hidden ${
           isMobileMenuOpen ? "hidden" : "block"
