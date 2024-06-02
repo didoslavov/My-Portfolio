@@ -4,9 +4,9 @@ import gsap from "gsap";
 import dynamic from "next/dynamic";
 import lightModeImage from "/public/portfolio-img-bg-light.avif";
 import darkModeImage from "/public/portfolio-img-bg-dark.avif";
+import Socials from "./socials";
 
 const Image = dynamic(() => import("next/image"));
-const Socials = dynamic(() => import("./socials"));
 
 const HeroImg = () => {
   const containerRef = useRef<HTMLDivElement>(null);
