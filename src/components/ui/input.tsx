@@ -1,8 +1,13 @@
-import { type ComponentProps } from "react";
-import { type FieldErrors, useForm, FieldValues, Path } from "react-hook-form";
+import type { ComponentProps } from "react";
+import {
+  Path,
+  useForm,
+  type FieldValues,
+  type FieldErrors,
+} from "react-hook-form";
 import { cn } from "@/utils/cn";
 
-type InputProps<T extends FieldValues> = ComponentProps<"input"> & {
+export type InputProps<T extends FieldValues> = ComponentProps<"input"> & {
   register: ReturnType<typeof useForm<T>>["register"];
   errors: FieldErrors<T>;
   name: keyof T;

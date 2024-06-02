@@ -1,4 +1,6 @@
-import About from "./(components)/about";
+import dynamic from "next/dynamic";
+
+const About = dynamic(() => import("./(components)/about"));
 
 export const metadata = {
   title: "Portfolio | About",

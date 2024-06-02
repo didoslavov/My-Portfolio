@@ -1,12 +1,14 @@
-import { type ComponentProps, type SyntheticEvent } from "react";
-import { type SubmitHandler } from "react-hook-form";
+import type { ComponentProps, SyntheticEvent } from "react";
+import type { SubmitHandler } from "react-hook-form";
 import { cn } from "@/utils/cn";
 
 type OmitOnSubmit<T> = Omit<T, "onSubmit">;
 
 import { FieldValues } from "react-hook-form";
 
-type FormProps<T extends FieldValues> = OmitOnSubmit<ComponentProps<"form">> & {
+export type FormProps<T extends FieldValues> = OmitOnSubmit<
+  ComponentProps<"form">
+> & {
   onSubmit: SubmitHandler<T>;
   handleSubmit: (
     callback: SubmitHandler<T>,

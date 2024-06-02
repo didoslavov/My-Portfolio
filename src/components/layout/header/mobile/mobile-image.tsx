@@ -23,6 +23,7 @@ const MobileImage: React.FC<MobileImageProps> = ({ isMobileMenuOpen }) => {
   return (
     <>
       <Image
+        placeholder="blur"
         width={500}
         height={500}
         src="/portfolio-img-bg-light.avif"
@@ -32,6 +33,7 @@ const MobileImage: React.FC<MobileImageProps> = ({ isMobileMenuOpen }) => {
         }`}
       />
       <Image
+        placeholder="blur"
         width={500}
         height={500}
         src="/portfolio-img-bg-dark.avif"

@@ -1,12 +1,18 @@
-import { type ComponentProps } from "react";
-import { type FieldErrors, useForm, FieldValues, Path } from "react-hook-form";
+import type { ComponentProps } from "react";
+import {
+  Path,
+  useForm,
+  type FieldValues,
+  type FieldErrors,
+} from "react-hook-form";
 import { cn } from "@/utils/cn";
 
-type TextAreaProps<T extends FieldValues> = ComponentProps<"textarea"> & {
-  register: ReturnType<typeof useForm<T>>["register"];
-  errors: FieldErrors<T>;
-  name: keyof T;
-};
+export type TextAreaProps<T extends FieldValues> =
+  ComponentProps<"textarea"> & {
+    register: ReturnType<typeof useForm<T>>["register"];
+    errors: FieldErrors<T>;
+    name: keyof T;
+  };
 
 const TextArea = <T extends FieldValues>({
   register,

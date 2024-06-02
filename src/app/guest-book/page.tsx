@@ -1,5 +1,7 @@
-import GuestBook from "./(components)/guest-book";
 import { getMessages } from "@/lib/actions/hasura-messages";
+import dynamic from "next/dynamic";
+
+const GuestBook = dynamic(() => import("./(components)/guest-book"));
 
 export const metadata = {
   title: "Portfolio | Guest Book",

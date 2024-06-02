@@ -2,7 +2,7 @@
 
 import { SubmitHandler, useForm } from "react-hook-form";
 import { sendEmail } from "@/lib/send-email";
-import { useRef } from "react";
+import { ComponentType, useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import {
   animateEnterPage,
@@ -12,11 +12,24 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Form from "@/components/ui/form";
-import Input from "@/components/ui/input";
-import FormError from "@/components/ui/form-error";
-import TextArea from "@/components/ui/text-area";
-import Button from "@/components/ui/button";
+import dynamic from "next/dynamic";
+import { FormProps } from "@/components/ui/form";
+import { InputProps } from "@/components/ui/input";
+import { TextAreaProps } from "@/components/ui/text-area";
+
+export type ContactFormData = z.infer<typeof contactFormSchema>;
+
+const Form = dynamic<FormProps<ContactFormData>>(
+  () => import("@/components/ui/form"),
+);
+const Input = dynamic<InputProps<ContactFormData>>(
+  () => import("@/components/ui/input"),
+);
+const FormError = dynamic(() => import("@/components/ui/form-error"));
+const TextArea = dynamic<TextAreaProps<ContactFormData>>(
+  () => import("@/components/ui/text-area"),
+);
+const Button = dynamic(() => import("@/components/ui/button"));
 
 export const contactFormSchema = z.object({
   name: z
@@ -27,8 +40,6 @@ export const contactFormSchema = z.object({
     .string()
     .min(10, { message: "Message must be at least 10 characters long" }),
 });
-
-export type ContactFormData = z.infer<typeof contactFormSchema>;
 
 const Contact = () => {
   const router = useRouter();

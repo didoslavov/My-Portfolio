@@ -1,10 +1,10 @@
 "use client";
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
 import { useRef, useState } from "react";
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import { gsap } from "gsap";
 import { horizontalLoop } from "@/utils/animations/animate-marquee";
-import Image, { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { cn } from "@/utils/cn";
 import { useGSAP } from "@gsap/react";
 import Link from "next/link";
@@ -82,6 +82,7 @@ const Marquee = ({ items, className, reversed }: MarqueeProps) => {
               <Image
                 src={item.src}
                 alt={item.alt}
+                placeholder="blur"
                 className="z-40 min-h-14 w-full"
               />
             </Link>

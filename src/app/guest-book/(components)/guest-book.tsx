@@ -1,11 +1,5 @@
 "use client";
 
-import Message from "@/app/guest-book/(components)/message";
-import Button from "@/components/ui/button";
-import Form from "@/components/ui/form";
-import FormError from "@/components/ui/form-error";
-import Input from "@/components/ui/input";
-import TextArea from "@/components/ui/text-area";
 import { GuestBookEntry } from "@/graphql/queries";
 import { addMessage } from "@/lib/actions/hasura-messages";
 import {
@@ -18,6 +12,25 @@ import { useRef } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 import { GiDiamondsSmile } from "react-icons/gi";
+import dynamic from "next/dynamic";
+import type { FormProps } from "@/components/ui/form";
+import type { InputProps } from "@/components/ui/input";
+import type { TextAreaProps } from "@/components/ui/text-area";
+
+export type MessageFormData = z.infer<typeof messageFormSchema>;
+
+const Message = dynamic(() => import("@/app/guest-book/(components)/message"));
+const Button = dynamic(() => import("@/components/ui/button"));
+const Form = dynamic<FormProps<MessageFormData>>(
+  () => import("@/components/ui/form"),
+);
+const FormError = dynamic(() => import("@/components/ui/form-error"));
+const Input = dynamic<InputProps<MessageFormData>>(
+  () => import("@/components/ui/input"),
+);
+const TextArea = dynamic<TextAreaProps<MessageFormData>>(
+  () => import("@/components/ui/text-area"),
+);
 
 export const messageFormSchema = z.object({
   user: z
@@ -27,8 +40,6 @@ export const messageFormSchema = z.object({
     .string()
     .min(5, { message: "Message must be at least 5 characters long" }),
 });
-
-export type MessageFormData = z.infer<typeof messageFormSchema>;
 
 function GuestBook({
   data,

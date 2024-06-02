@@ -31,6 +31,7 @@ const Message = ({ user, message, created_at }: Omit<GuestBookEntry, "id">) => {
             {message}
           </p>
         </div>
+        {/* Structure for future implementation related with authentication*/}
         {/* <div className="flex items-center gap-2 text-2xl md:text-3xl">
           <button>
             <BiMessageSquareEdit />

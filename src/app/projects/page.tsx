@@ -1,6 +1,8 @@
-import { BentoGridProjcts } from "@/components/layout/projects";
+import type { Project } from "@/types/projects";
 import { getProjects } from "@/lib/github-api";
-import { Project } from "@/types/projects";
+import dynamic from "next/dynamic";
+
+const BentoGridProjcts = dynamic(() => import("@/components/layout/projects"));
 
 const Projects = async () => {
   const projects: Project[] = await getProjects();

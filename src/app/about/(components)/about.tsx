@@ -1,8 +1,7 @@
 "use client";
 
-import Marquee from "@/components/ui/marquee";
-import React, { useRef } from "react";
-import Summary from "../(components)/summary";
+import dynamic from "next/dynamic";
+import { useRef } from "react";
 import { technologies } from "@/constans/technologies";
 import { certificates } from "@/constans/certificates";
 import { useGSAP } from "@gsap/react";
@@ -10,6 +9,9 @@ import {
   animateEnterPage,
   animateListSlider,
 } from "@/utils/animations/animate-page";
+
+const Summary = dynamic(() => import("../(components)/summary"));
+const Marquee = dynamic(() => import("@/components/ui/marquee"));
 
 const About = () => {
   const contentRef = useRef<HTMLDivElement>(null);

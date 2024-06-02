@@ -1,5 +1,3 @@
-import React from "react";
-
 const Sumamry = () => {
   return (
     <div className="flex flex-col gap-4 text-justify indent-3 text-base text-raisin-black dark:text-silver md:inset-0 md:text-start md:text-xl">

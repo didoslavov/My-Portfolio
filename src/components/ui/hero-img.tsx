@@ -1,11 +1,12 @@
 import { FaUserAstronaut } from "react-icons/fa";
-import Image from "next/image";
 import { useRef } from "react";
-import Socials from "./socials";
-
-import darkModeImage from "/public/portfolio-img-bg-dark.avif";
-import lightModeImage from "/public/portfolio-img-bg-light.avif";
 import gsap from "gsap";
+import dynamic from "next/dynamic";
+import lightModeImage from "/public/portfolio-img-bg-light.avif";
+import darkModeImage from "/public/portfolio-img-bg-dark.avif";
+
+const Image = dynamic(() => import("next/image"));
+const Socials = dynamic(() => import("./socials"));
 
 const HeroImg = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -63,6 +64,7 @@ const HeroImg = () => {
       onMouseLeave={handleHoverExit}
     >
       <Image
+        placeholder="blur"
         width={800}
         height={800}
         src={darkModeImage}
@@ -70,6 +72,7 @@ const HeroImg = () => {
         className="relative z-50 block w-[260px] space-x-3 rounded-xl dark:hidden md:w-[360px] lg:h-[470px]"
       />
       <Image
+        placeholder="blur"
         width={800}
         height={800}
         src={lightModeImage}

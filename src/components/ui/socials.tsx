@@ -1,10 +1,9 @@
+import Link from "next/link";
+import { forwardRef } from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { IoIosPaper } from "react-icons/io";
 
-import React from "react";
-import Link from "next/link";
-
-const Socials = React.forwardRef<HTMLUListElement>((props, ref) => {
+const Socials = forwardRef<HTMLUListElement>((props, ref) => {
   return (
     <ul
       ref={ref}

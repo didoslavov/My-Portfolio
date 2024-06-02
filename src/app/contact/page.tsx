@@ -1,5 +1,6 @@
-import React from "react";
-import Contact from "./(components)/contact";
+import dynamic from "next/dynamic";
+
+const Contact = dynamic(() => import("./(components)/contact"));
 
 export const metadata = {
   title: "Portfolio | Contact",

@@ -37,9 +37,9 @@ const Header = () => {
       <div className="z-50 max-w-28 md:max-w-32">
         <Link href="/">
           {mounted && resolvedTheme === "dark" ? (
-            <Image src={logoBgDark} alt="Logo" />
+            <Image src={logoBgDark} alt="Logo" placeholder="blur" />
           ) : (
-            <Image src={logoBgLight} alt="Logo" />
+            <Image src={logoBgLight} alt="Logo" placeholder="blur" />
           )}
         </Link>
       </div>

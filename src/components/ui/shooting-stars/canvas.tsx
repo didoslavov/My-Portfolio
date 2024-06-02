@@ -5,9 +5,11 @@ import * as PIXI from "pixi.js";
 import gsap from "gsap";
 import { PixiPlugin } from "gsap/PixiPlugin";
 import { Stage } from "@pixi/react";
-import StaticStar from "./static-star";
-import FallingStar from "./falling-star";
 import { useTheme } from "next-themes";
+import dynamic from "next/dynamic";
+
+const StaticStar = dynamic(() => import("./static-star"));
+const FallingStar = dynamic(() => import("./falling-star"));
 
 gsap.registerPlugin(PixiPlugin);
 PixiPlugin.registerPIXI(PIXI);
